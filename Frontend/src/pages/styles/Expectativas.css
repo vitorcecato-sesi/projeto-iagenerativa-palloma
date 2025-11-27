@@ -1,0 +1,153 @@
+/* Inclusão de fontes */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Serif+Text:ital@0;1&family=Gloock&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+/* ===== Layout geral ===== */
+.page-container {
+  font-family: "Poppins", sans-serif;
+  padding: 20px 40px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ===== Shapes decorativos ===== */
+.shape {
+  position: absolute;
+  opacity: 0.45;
+  z-index: -1;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.yellow {
+  width: 180px;
+  height: 180px;
+  background: #ffe600;
+  top: 80px;
+  left: -50px;
+}
+
+.blue {
+  width: 300px;
+  height: 300px;
+  background: #005dfd;
+  top: -70px;
+  right: 120px;
+}
+
+.square.green {
+  width: 250px;
+  height: 180px;
+  background: #00ff1e;
+  top: 240px;
+  right: 0;
+}
+
+.small-red {
+  width: 60px;
+  height: 60px;
+  background: #ff0000;
+  top: 330px;
+  right: 220px;
+}
+
+/* ===== Header ===== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.title {
+  font-size: 7vw;
+  font-weight: 800;
+  line-height: 0.9;
+  font-family: 'Anton', sans-serif;
+  color: #4a1d00;
+  margin-top: 40px;
+}
+
+.menu button {
+  background: #ff92c2;
+  border: none;
+  padding: 6px 20px;
+  margin-left: 6px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.menu button:hover {
+  background: #ff7ab0;
+}
+
+/* ===== Selector ===== */
+.selector-section {
+  margin-top: 40px;
+  font-weight: 600;
+  font-size: 1.2vw;
+  color: #6697ED;
+}
+
+.selector-section select {
+  margin-top: 6px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 180px;
+  background: #f2f2f2;
+}
+
+/* ===== Card ===== */
+.card {
+  margin-top: 25px;
+  background: #f7f7f7;
+  border-radius: 12px;
+  padding: 20px;
+  min-height: 300px;
+}
+
+.card h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.empty-area {
+  text-align: center;
+  color: #555;
+  margin-top: 40px;
+}
+
+.icon-placeholder {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.list {
+  padding: 10px;
+  font-size: 16px;
+}
+
+/* ===== Footer ===== */
+.footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 14px;
+  color: #444;
+  position: relative;
+}
+
+.footer-icon {
+  width: 40px;
+  margin-bottom: 10px;
+}
+
+.footer span {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-right: 10px;
+}

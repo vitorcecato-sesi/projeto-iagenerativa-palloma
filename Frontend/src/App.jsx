@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
 
 import Login from './pages/Login.jsx'
+import Expectativas from './pages/Expectativas.jsx'
 
 function App() {
 
@@ -10,7 +11,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Login />} />
+          <Route path='/' element={<Expectativas />} />
         </Routes>
       </BrowserRouter>
     </>
