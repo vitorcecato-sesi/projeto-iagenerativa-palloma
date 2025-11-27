@@ -103,7 +103,7 @@
 
 .main-title {
   font-family: 'Alfa Slab One', cursive;
-  font-size: 6rem;
+  font-size: 7.5rem;
   color: #3E2723;
   margin: 0;
   line-height: 1;
@@ -121,7 +121,7 @@
 
 .blue-box {
   background-color: #7EB6FF;
-  width: 55%;
+  width: 45%;
   padding: 40px 5%;
   color: white;
   font-size: 0.9rem;
@@ -138,8 +138,8 @@
   position: absolute;
   right: 5%;
   top: -20px;
-  width: 45%;
-  height: 100%;
+  width: 43%;
+  height: 95%;
   z-index: 3;
   display: flex;
   align-items: center;
@@ -170,9 +170,14 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  /* force three columns on wide screens so layout is 3 on top and 3 on bottom */
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
   gap: 40px;
   justify-content: center;
+  width: 100%;
+  max-width: 1200px; /* keep the grid from spreading too wide */
+  margin: 0 auto;
+  justify-items: center; /* center cards inside each column */
 }
 
 .member-card {
@@ -182,18 +187,46 @@
 }
 
 .photo-placeholder {
+  /* make the placeholder a square so it can be a perfect circle */
   width: 180px;
-  height: 220px;
+  height: 180px;
   background-color: #E0E0E0;
   margin-bottom: 15px;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
   overflow: hidden; /* Garante que a imagem não saia da div */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .photo-placeholder img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 50%;
+}
+
+/* explicit class for member images - keeps future styles local and clear */
+.member-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* light-blue border and subtle hover effect for member avatars */
+.photo-placeholder {
+  /* keep circular container; border sits outside the image */
+  border: 4px solid #81D4FA; /* azul claro */
+  transition: transform 0.18s ease, box-shadow 0.18s ease; /* smooth hover */
+}
+
+.member-card:hover .photo-placeholder,
+.member-photo:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
 .member-name {
@@ -235,8 +268,24 @@
 
 /* Responsividade simples para telas menores */
 @media (max-width: 768px) {
-  .main-title { font-size: 3.5rem; }
+  .main-title { font-size: 6rem; }
   .content-section { flex-direction: column; }
   .blue-box { width: 90%; margin-bottom: 20px; }
   .group-photo-container { position: relative; width: 90%; right: auto; left: 5%; }
+  /* smaller member avatars on small screens */
+  .photo-placeholder { width: 140px; height: 140px; }
+  /* smaller member avatars on small screens */
+  .photo-placeholder { width: 140px; height: 140px; }
+
+  /* adapt grid to fewer columns on smaller devices */
+  .grid-container {
+    grid-template-columns: repeat(2, minmax(140px, 1fr));
+    gap: 24px;
+  }
+}
+
+/* single column on very small screens */
+@media (max-width: 420px) {
+  .grid-container { grid-template-columns: 1fr; gap: 20px; }
+  .photo-placeholder { width: 120px; height: 120px; }
 }

@@ -1,5 +1,14 @@
 import React from 'react';
 import './styles/SobreGrupo.css'; // Importando o arquivo CSS criado acima
+import imgGrupo from "../assets/imgGrupo.png";
+
+import FtLaura from "../assets/FtLaura.png";
+import FtLucas from "../assets/FtLucas.png";
+import FtMilena from "../assets/FtMilena.png";
+import FtPietro from "../assets/FtPietro.png";
+import FtPyetro from "../assets/FtPyetro.png";
+import FtVitor from "../assets/FtVitor.png";
+
 
 const SobreNos = () => {
   // Lista de integrantes
@@ -46,7 +55,7 @@ const SobreNos = () => {
         {/* Container da foto do grupo */}
         <div className="group-photo-container">
           <img 
-            src="https://placehold.co/600x400/555/white?text=Foto+do+Grupo" 
+            src={imgGrupo} 
             alt="Grupo 3" 
             className="group-photo" 
           />
@@ -63,8 +72,15 @@ const SobreNos = () => {
               <div className="photo-placeholder">
                  {/* Substitua o src abaixo pelas fotos reais */}
                  <img 
-                    src="https://placehold.co/200x250/d3d3d3/d3d3d3" 
-                    alt={member.name}
+                    src={
+                      index === 0 ? FtLaura :
+                      index === 1 ? FtLucas :
+                      index === 2 ? FtMilena :
+                      index === 3 ? FtPietro :
+                      index === 4 ? FtPyetro :
+                      FtVitor} 
+                      alt={member.name}
+                      className="member-photo"
                  />
               </div>
               <p className="member-name">{member.name}</p>
