@@ -1,0 +1,52 @@
+/* Importando Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Serif+Text:ital@0;1&family=Gloock&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Serif+Text:ital@0;1&family=Gloock&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+.tituloHome{
+    font-family: "Anton", sans-serif;
+    font-size: 10.2em;       
+    color: #491900;         
+    line-height: 1; /* linhas mais próximas */
+    margin-top: -67px; 
+    padding-left: 0.1em;
+
+}
+
+.blocoPrincipalHome{
+    display: flex;
+    flex-direction: row;
+}
+
+.quadradoHome{
+    width: 3vw;
+}
+
+.blocoTexto{
+    padding-top: 18em;
+    padding-left: 15em;
+    font-size: 1.20em;
+}
+
+.textoHome{
+    font-family: "Nunito", sans-serif;
+    color: #491900;
+    font-weight: 600;
+}
+
+.blocosHome{
+    display: flex;
+    flex-direction: row;
+    gap: 6em;
+    padding-left: 4em;
+    padding-top: 2em;
+}
+
+.forma {
+    position: inherit;
+}
+
+.blocoAzulHome{
+    width: 5.5vw;
+    height: 5vw;
+    background-color: #6697ED;
+}
