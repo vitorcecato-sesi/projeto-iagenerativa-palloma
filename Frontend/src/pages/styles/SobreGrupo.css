@@ -237,6 +237,7 @@
   margin: 0;
 }
 
+
 /* --- Rodapé --- */
 .footer {
   display: flex;
@@ -266,26 +267,92 @@
   font-size: 2rem;
 }
 
-/* Responsividade simples para telas menores */
-@media (max-width: 768px) {
-  .main-title { font-size: 6rem; }
-  .content-section { flex-direction: column; }
-  .blue-box { width: 90%; margin-bottom: 20px; }
-  .group-photo-container { position: relative; width: 90%; right: auto; left: 5%; }
-  /* smaller member avatars on small screens */
-  .photo-placeholder { width: 140px; height: 140px; }
-  /* smaller member avatars on small screens */
-  .photo-placeholder { width: 140px; height: 140px; }
-
-  /* adapt grid to fewer columns on smaller devices */
-  .grid-container {
-    grid-template-columns: repeat(2, minmax(140px, 1fr));
-    gap: 24px;
+@media (max-width: 1337px) {
+  .group-photo{
+    height: 115%;
+    width: 100%;
   }
 }
 
-/* single column on very small screens */
-@media (max-width: 420px) {
-  .grid-container { grid-template-columns: 1fr; gap: 20px; }
-  .photo-placeholder { width: 120px; height: 120px; }
+@media (max-width: 1084){
+
+  .group-photo{
+    height: 100%;
+    width: 200%;
+  }
+}
+
+@media (max-width: 1075px) {
+  .content-section {
+    flex-direction: column;
+    align-items: center;
+    min-height: auto;
+  }
+
+  .blue-box {
+    width: 80%;
+    border-radius: 10px;
+    font-size: 1.4rem;
+
+  }
+
+  .group-photo-container {
+    position: static;
+    width: 95%;
+    height: auto;
+    margin-top: 20px;
+  }
+
+  .group-photo {
+    width: 70%;
+    height: auto;
+    margin-left: 14%;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+    gap: 70px;
+  }
+
+.members-title{
+    font-size: 2.5rem;
+}
+
+.member-name {
+    font-size: 2rem;
+}
+}
+
+@media (max-width: 798px) {
+  .main-title{
+    font-size: 7rem;
+  }
+
+  .group-photo{
+    width: 80%;
+    height: auto;
+    margin-left: 10%;
+  }
+}
+
+@media (max-width: 400px) {
+  .main-title{
+    font-size: 5rem;
+  }
+
+  .member-photo{
+    width: 140px;
+    height: 140px;
+  }
+}
+
+@media (max-width: 500px){
+  .main-title{
+    font-size: 7rem;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
 }
