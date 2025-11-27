@@ -49,14 +49,16 @@ const Login = () => {
     <section className="login-container">
       {/* Formas decorativas do fundo */}
       <span className="forma circulo-amarelo"></span>
+      <span className="forma circulo-amarelo-g"></span>
       <span className="forma circulo-laranja"></span>
       <span className="forma circulo-azul"></span>
       <span className="forma circulo-vermelho"></span>
+      <span className="forma circulo-vermelho-g"></span>
       <span className="forma circulo-verde"></span>
       <span className="forma circulo-amarelo"></span>
       <span className="forma retangulo-verde"></span>
       <span className="forma retangulo-azul"></span>
-      <span className="forma quadrado-verde"></span>
+      <span className="forma retangulo-verde-h"></span>
 
       {/* Bloco Login */}
       <section className="login-box">

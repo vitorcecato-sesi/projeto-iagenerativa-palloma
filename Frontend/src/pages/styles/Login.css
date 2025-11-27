@@ -17,7 +17,8 @@
     height: 100vh;
     background-color: #fcfcf8;
     display: flex;
-    justify-content: center;
+    justify-content: start;
+    padding: 18em;
     align-items: center;
     overflow: hidden;
     /* Não permite a barra de rolagem (devido as formas) */
@@ -34,21 +35,31 @@
 }
 
 .circulo-amarelo {
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
     background-color: #fff59d;
     border-radius: 50%;
     top: 20%;
     left: -50px;
+    z-index: 11;
+}
+
+.circulo-amarelo-g {
+    width: 550px;
+    height: 550px;
+    background-color: #fff59d;
+    border-radius: 50%;
+    top: -40%;
+    right: -10%;
 }
 
 .circulo-laranja {
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
     background-color: #ff8a65;
     border-radius: 50%;
-    top: 10%;
-    right: -100px;
+    top: 15%;
+    right: 10%;
 }
 
 .circulo-azul {
@@ -58,6 +69,7 @@
     border-radius: 50%;
     bottom: -100px;
     left: 40%;
+    z-index: 11;
 }
 
 .circulo-vermelho {
@@ -69,9 +81,18 @@
     left: 15%;
 }
 
+.circulo-vermelho-g {
+    width: 120px;
+    height: 120px;
+    background-color: #ff6b6b;
+    border-radius: 50%;
+    top: 30%;
+    left: 50%;
+}
+
 .circulo-verde {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     background-color: #4ade80;
     border-radius: 50%;
     top: -20px;
@@ -79,15 +100,15 @@
 }
 
 .retangulo-verde {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 150px;
     background-color: #4ade80;
     bottom: 0;
-    left: 30px;
+    left: 80px;
 }
 
 .retangulo-azul {
-    width: 150px;
+    width: 180px;
     height: 500px;
     background-color: #b3e5fc;
     top: 0;
@@ -95,22 +116,25 @@
     z-index: 0;
 }
 
-.quadrado-verde {
-    width: 200px;
-    height: 200px;
-    background-color: #4ade80;
+.retangulo-verde-h {
+    width: 500px;
+    height: 150px;
+    background-color: #7cfff0;
     z-index: 0;
     top: 70%;
-    right: 3%;
+    right: 0%;
 }
 
 /* ----- Bloco de Login */
 
 .login-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     position: relative;
     z-index: 10; /* Confirmar que irá ficar na frente das formas */
-    width: 25vw;
-    height: 70vh;
+    min-width: 25vw;
+    min-height: 70vh;
     padding: 40px;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.65);
@@ -118,6 +142,13 @@
     -webkit-backdrop-filter: blur(12px); /* Aplica o mesmo efeito de desfoque - para compatibilidade com navegadores antigos */
     border: 1px solid rgba(255, 255, 255, 0.4);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    transition: 0.5s;
+}
+
+.login-box:hover {
+    transform: scale(1.02);
+    transition: 0.5s;
+    z-index: 12;
 }
 
 .login-titulo {
