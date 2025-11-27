@@ -1,0 +1,192 @@
+/* Inclusão de fontes */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Serif+Text:ital@0;1&family=Gloock&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+    box-sizing: border-box;
+    /* Inclui padding e border na largura e altura totais */
+    margin: 0;
+    padding: 0;
+}
+
+/* ----- Container Principal */
+
+.login-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fcfcf8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* Não permite a barra de rolagem (devido as formas) */
+    font-family: 'Anton', sans-serif;
+}
+
+/* ----- Formas Geométricas do Fundo */
+
+.forma {
+    /* Classe que fará com que as formas fiquem no fundo */
+    position: absolute;
+    z-index: 1;
+    /* Ficam atrás do cartão */
+}
+
+.circulo-amarelo {
+    width: 300px;
+    height: 300px;
+    background-color: #fff59d;
+    border-radius: 50%;
+    top: 20%;
+    left: -50px;
+}
+
+.circulo-laranja {
+    width: 400px;
+    height: 400px;
+    background-color: #ff8a65;
+    border-radius: 50%;
+    top: 10%;
+    right: -100px;
+}
+
+.circulo-azul {
+    width: 350px;
+    height: 350px;
+    background-color: #6495ed;
+    border-radius: 50%;
+    bottom: -100px;
+    left: 40%;
+}
+
+.circulo-vermelho {
+    width: 80px;
+    height: 80px;
+    background-color: #ff6b6b;
+    border-radius: 50%;
+    top: 80px;
+    left: 15%;
+}
+
+.circulo-verde {
+    width: 60px;
+    height: 60px;
+    background-color: #4ade80;
+    border-radius: 50%;
+    top: -20px;
+    left: 55%;
+}
+
+.retangulo-verde {
+    width: 200px;
+    height: 200px;
+    background-color: #4ade80;
+    bottom: 0;
+    left: 30px;
+}
+
+.retangulo-azul {
+    width: 150px;
+    height: 500px;
+    background-color: #b3e5fc;
+    top: 0;
+    left: 35%;
+    z-index: 0;
+}
+
+.quadrado-verde {
+    width: 200px;
+    height: 200px;
+    background-color: #4ade80;
+    z-index: 0;
+    top: 70%;
+    right: 3%;
+}
+
+/* ----- Bloco de Login */
+
+.login-box {
+    position: relative;
+    z-index: 10; /* Confirmar que irá ficar na frente das formas */
+    width: 25vw;
+    height: 70vh;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(12px); /* Aplica um efeito de desfoque */
+    -webkit-backdrop-filter: blur(12px); /* Aplica o mesmo efeito de desfoque - para compatibilidade com navegadores antigos */
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+}
+
+.login-titulo {
+    font-family: 'Anton', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 1;
+    /* Muda o tamanho da linha */
+    color: #3e2723;
+    margin-bottom: 40px;
+}
+
+/* ----- Inputs */
+.login-inputs {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-inputs label {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.login-inputs input {
+    background: transparent;
+    /* Deixa o fundo transparente */
+    border: none;
+    border-bottom: 2px solid #333;
+    padding: 5px 0;
+    font-size: 1rem;
+    outline: none;
+    color: #000;
+    transition: border-color 0.3s;
+}
+
+.login-inputs input:focus {
+    border-bottom-color: #008cba;
+}
+
+/* ----- Status - Validação */
+.status-sucesso {
+    color: #4caf50;
+    margin-bottom: 15px;
+}
+
+.status-erro {
+    color: #f44336;
+    margin-bottom: 15px;
+}
+
+/* --- Botão --- */
+.login-botao {
+    width: 100%;
+    padding: 12px;
+    background-color: #008cba;
+    /* Azul */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    /* Transição especificamente no background */
+    margin-top: 10px;
+}
+
+.login-botao:hover {
+    background-color: #00779e;
+}
