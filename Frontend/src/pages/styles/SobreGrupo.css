@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Poppins:wght@400;700&display=swap');
+
+/* --- Configurações Gerais --- */
+.page-container {
+  font-family: 'Poppins', sans-serif;
+  background-color: #FAFBF5; /* Cor creme do fundo */
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden; /* Evita rolagem horizontal por causa dos círculos */
+  padding-bottom: 20px;
+}
+
+/* --- Elementos Decorativos (Círculos) --- */
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.top-yellow {
+  top: -50px;
+  left: 10%;
+  width: 200px;
+  height: 200px;
+  background-color: #FFF59D;
+}
+
+.top-blue {
+  top: 20px;
+  right: 20%;
+  width: 350px;
+  height: 350px;
+  background-color: #B3E5FC;
+}
+
+.red-dot-left {
+  top: 38%;
+  left: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #FF8A80;
+  z-index: 1;
+}
+
+.red-dot-right {
+  top: 180px;
+  right: -20px;
+  width: 80px;
+  height: 80px;
+  background-color: #FF8A80;
+  z-index: 1;
+}
+
+.bottom-yellow {
+  bottom: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background-color: #FFF59D;
+  z-index: -1;
+}
+
+/* --- Navegação --- */
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.nav-buttons-container {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-button {
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: transform 0.2s;
+}
+
+.nav-button:hover {
+  transform: scale(1.1);
+}
+
+.btn-home { background-color: #FF85A2; }
+.btn-sobre { background-color: #FFD700; }
+
+/* --- Cabeçalho --- */
+.header {
+  position: relative;
+  padding-left: 5%;
+  padding-top: 20px;
+  z-index: 10;
+}
+
+.main-title {
+  font-family: 'Alfa Slab One', cursive;
+  font-size: 6rem;
+  color: #3E2723;
+  margin: 0;
+  line-height: 1;
+  text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+}
+
+/* --- Seção de Conteúdo (Texto Azul + Foto) --- */
+.content-section {
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
+  position: relative;
+  min-height: 350px;
+}
+
+.blue-box {
+  background-color: #7EB6FF;
+  width: 55%;
+  padding: 40px 5%;
+  color: white;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  z-index: 2;
+  text-align: justify;
+}
+
+.group-photo-container {
+  position: absolute;
+  right: 5%;
+  top: -20px;
+  width: 45%;
+  height: 100%;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+}
+
+.group-photo {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border: 5px solid white;
+  object-fit: cover;
+}
+
+/* --- Seção Integrantes --- */
+.members-section {
+  padding: 40px 5%;
+  margin-top: 50px;
+  z-index: 10;
+  position: relative;
+}
+
+.members-title {
+  color: #7EB6FF;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  justify-content: center;
+}
+
+.member-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.photo-placeholder {
+  width: 180px;
+  height: 220px;
+  background-color: #E0E0E0;
+  margin-bottom: 15px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+  overflow: hidden; /* Garante que a imagem não saia da div */
+}
+
+.photo-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.member-name {
+  color: #81D4FA;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 0;
+}
+
+/* --- Rodapé --- */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  margin-top: 50px;
+  position: relative;
+  z-index: 10;
+}
+
+.footer-center {
+  text-align: center;
+  color: #333;
+}
+
+.footer-center p {
+  margin: 0;
+}
+
+.footer-right {
+  text-align: right;
+  position: relative;
+}
+
+.logo-placeholder {
+  font-size: 2rem;
+}
+
+/* Responsividade simples para telas menores */
+@media (max-width: 768px) {
+  .main-title { font-size: 3.5rem; }
+  .content-section { flex-direction: column; }
+  .blue-box { width: 90%; margin-bottom: 20px; }
+  .group-photo-container { position: relative; width: 90%; right: auto; left: 5%; }
+}
