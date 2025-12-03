@@ -1,20 +1,22 @@
-/* =========================================
-   FOOTER
-========================================= */
 .simple-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-top: 40px;
-    padding-bottom: 10px;
-    font-size: 0.8rem;
-    color: #555;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  margin-top: 40px;
+  margin-bottom: -100px;
 }
 
-.logo-placeholder {
-    font-size: 2rem;
+.logo-placeholder img {
+  height: 80px;
+  width: auto;
 }
 
 .rights {
-    text-align: center;
+  text-align: center;
+  font-size: 14px;
+}
+
+.year {
+  font-size: 14px;
 }

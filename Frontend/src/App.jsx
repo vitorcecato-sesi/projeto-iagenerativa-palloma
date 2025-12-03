@@ -12,7 +12,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Login />} />
-          <Route path='/assistente' element={<AssistenteIA />} />
+          <Route path='/home' element={<AssistenteIA />} />
         </Routes>
       </BrowserRouter>
     </>

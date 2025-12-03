@@ -1,5 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 import "./styles/AssistenteIA.css";
+
+import Navbar from "../components/Navbar.jsx";
+import Footer from '../components/Footer.jsx';
 
 // Componente de Ícone simples (SVG)
 const SparkleIcon = () => (
@@ -18,7 +23,7 @@ export default function AssistenteIA() {
   
   const resultRef = useRef(null);
 
-  const API_KEY = ""; 
+  const API_KEY = "AIzaSyCeBaBqYT9ztgeSmklcWbu6K6QmD1uzsr8"; 
   const MODEL = "gemini-2.5-flash";
 
   const sugestoes = [
@@ -191,6 +196,7 @@ export default function AssistenteIA() {
       <section className="content-wrapper">
 
         {/* === IMPORTAÇÃO DO NOVO COMPONENTE NAVBAR === */}
+        <Navbar />
         {/* ========================================= */}
         
         {/* Topo */}
@@ -200,10 +206,10 @@ export default function AssistenteIA() {
               Crie seu <br /> plano <br /> de aula <br /> agora
             </h1>
             <section className="expectations-btn-wrapper">
-                <button className="expectations-btn">
-                    Ver expectativas de <br/> cada Série/Ano
+              <Link to="/expectativas" className="expectations-btn">
+                    Ver expectativas de<br/>cada Série/Ano
                     <span className="icon-pointer">👆</span>
-                </button>
+                </Link>
             </section>
           </section>
 
@@ -295,6 +301,8 @@ export default function AssistenteIA() {
             )}
           </section>
         </section>
+
+        <Footer />
 
       </section>
     </section>
