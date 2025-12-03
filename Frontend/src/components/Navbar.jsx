@@ -5,7 +5,7 @@ export default function Navbar() {
   return (
     <>
       <nav className="navbar">
-        <Link className="blocoLoginNavbar" to="/home"> Home </Link>
+        <Link className="blocoLoginNavbar" to="/assistente"> Home </Link>
         <Link className="blocoSobreNavbar" to="/sobrenos"> Sobre </Link>
       </nav>
     </>
