@@ -149,6 +149,121 @@ export const expectativas6 = [
         objetivos: "Discussão oral",
         habilidades: "Posicionar-se de forma consistente e sustentada em uma discussão, assembleia, reuniões de colegiados da escola, de agremiações e outras situações de apresentação de propostas e defesas de opiniões, respeitando as opiniões contrárias e propostas alternativas e fundamentando seus posicionamentos, no tempo de fala previsto, valendo-se de sínteses e propostas claras e justificadas.",
     },
+    {
+        codigo: "EF69LP26",
+        praticas: "Oralidade",
+        objetivos: "Registro",
+        habilidades: "Tomar nota em discussões, debates, palestras, apresentação de propostas, reuniões, como forma de documentar o evento e apoiar a própria fala (que pode se dar no momento do evento ou posteriormente, quando, por exemplo, for necessária a retomada dos assuntos tratados em outros contextos públicos, como diante dos representados).",
+    },
+    {
+        codigo: "EF69LP27",
+        praticas: "Análise linguística/semiótica",
+        objetivos: "Análise de textos legais/normativos, propositivos e reivindicatórios",
+        habilidades: "Analisar a forma composicional de textos pertencentes a gêneros normativos/jurídicos e a gêneros da esfera política, tais como propostas, programas políticos (posicionamento quanto a diferentes ações a serem propostas, objetivos, ações previstas etc.), propaganda política (propostas e sua sustentação, posicionamento quanto a temas em discussão) e textos reivindicatórios: cartas de reclamação, petição (proposta, suas justificativas e ações a serem adotadas) e suas marcas linguísticas, de forma a incrementar a compreensão de textos pertencentes a esses gêneros e a possibilitar a produção de textos mais adequados e/ou fundamentados quando isso for requerido.",
+    },
+    {
+        codigo: "EF69LP28",
+        praticas: "Análise linguística/semiótica",
+        objetivos: "Modalização",
+        habilidades: "Observar os mecanismos de modalização adequados aos textos jurídicos, as modalidades deônticas, que se referem ao eixo da conduta (obrigatoriedade/permissibilidade) como, por exemplo: Proibição: “Não se deve fumar em recintos fechados.”; Obrigatoriedade: “A vida tem que valer a pena.”; Possibilidade: “É permitido a entrada de menores acompanhados de adultos responsáveis”, e os mecanismos de modalização adequados aos textos políticos e propositivos, as modalidades apreciativas, em que o locutor exprime um juízo de valor (positivo ou negativo) acerca do que enuncia. Por exemplo: “Que belo discurso!”, “Discordo das escolhas de Antônio.” “Felizmente, o buraco ainda não causou acidentes mais graves.”",
+    },
+    {
+        codigo: "",
+        praticas: "",
+        objetivos: "",
+        habilidades: "",
+    },
+    {
+        codigo: "",
+        praticas: "",
+        objetivos: "",
+        habilidades: "",
+    },
+    {
+        codigo: "",
+        praticas: "",
+        objetivos: "",
+        habilidades: "",
+    },
+    {
+        codigo: "",
+        praticas: "",
+        objetivos: "",
+        habilidades: "",
+    },
+    {
+        codigo: "",
+        praticas: "",
+        objetivos: "",
+        habilidades: "",
+    },
+    {
+        codigo: "",
+        praticas: "",
+        objetivos: "",
+        habilidades: "",
+    },
+    {
+        codigo: "",
+        praticas: "",
+        objetivos: "",
+        habilidades: "",
+    },
+    {
+        codigo: "",
+        praticas: "",
+        objetivos: "",
+        habilidades: "",
+    },
+    {
+        codigo: "",
+        praticas: "",
+        objetivos: "",
+        habilidades: "",
+    },
+    {
+        codigo: "",
+        praticas: "",
+        objetivos: "",
+        habilidades: "",
+    },
+    {
+        codigo: "",
+        praticas: "",
+        objetivos: "",
+        habilidades: "",
+    },
+    {
+        codigo: "",
+        praticas: "",
+        objetivos: "",
+        habilidades: "",
+    },
+    {
+        codigo: "",
+        praticas: "",
+        objetivos: "",
+        habilidades: "",
+    },
+    {
+        codigo: "",
+        praticas: "",
+        objetivos: "",
+        habilidades: "",
+    },
+    {
+        codigo: "",
+        praticas: "",
+        objetivos: "",
+        habilidades: "",
+    },
+    {
+        codigo: "",
+        praticas: "",
+        objetivos: "",
+        habilidades: "",
+    },
+
 ];
 
 export const expectativas7 = [
