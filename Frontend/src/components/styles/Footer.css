@@ -1,0 +1,20 @@
+/* =========================================
+   FOOTER
+========================================= */
+.simple-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 40px;
+    padding-bottom: 10px;
+    font-size: 0.8rem;
+    color: #555;
+}
+
+.logo-placeholder {
+    font-size: 2rem;
+}
+
+.rights {
+    text-align: center;
+}
