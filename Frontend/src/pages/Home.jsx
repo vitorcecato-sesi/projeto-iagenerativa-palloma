@@ -1,12 +1,11 @@
+// ...existing code...
 import "./styles/Home.css";
 import quadradoHome from "../assets/quadradoHome.png";
-import Navbar from "../components/Navbar"
 
 export default function Home() {
   return (
     <>
-    <Navbar/>
-
+    <section className="siteTodo">
       <section className="blocoPrincipalHome">
         <section>
           <h1 className="tituloHome">
@@ -24,17 +23,18 @@ export default function Home() {
       </section>
 
       <section className="blocosHome">
-        <span className="forma blocoAzulHome"></span>
-        <span className="forma blocoAzulHome"></span>
-        <span className="forma blocoAzulHome"></span>
-        <span className="forma blocoAzulHome"></span>
-        <span className="forma blocoAzulHome"></span>
-        <span className="forma blocoAzulHome"></span>
-        <span className="forma blocoAzulHome"></span>
-        <span className="forma blocoAzulHome"></span>
-        <span className="forma blocoAzulHome"></span>
+        <span className="home-shape blocoAzulHome"></span>
+        <span className="home-shape blocoAzulHome"></span>
+        <span className="home-shape blocoAzulHome"></span>
+        <span className="home-shape blocoAzulHome"></span>
+        <span className="home-shape blocoAzulHome"></span>
+        <span className="home-shape blocoAzulHome"></span>
+        <span className="home-shape blocoAzulHome"></span>
+        <span className="home-shape blocoAzulHome"></span>
+        <span className="home-shape blocoAzulHome"></span>
     </section>
-
+    
+</section>
     </>
   );
 }
