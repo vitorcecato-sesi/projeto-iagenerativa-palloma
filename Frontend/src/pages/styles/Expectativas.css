@@ -1,193 +1,283 @@
-/* Inclusão de fontes e Font Awesome (necessário para os ícones) */
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+/* =========================================
+   FONTES
+========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Nunito:wght@400;600;700;800&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
 
 
-/* ===== Layout Geral ===== */
+/* =========================================
+   RESET & BASE
+========================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  /* Usando a cor de fundo bege/creme que você definiu para Expectativas */
+  background-color: #f7f3e8;
+  color: #333;
+}
+
+/* =========================================
+   CONTAINER PRINCIPAL
+========================================= */
 .page-container-expectativas {
-    /* Cor de fundo próxima do tom bege/creme da imagem */
-    background-color: #f7f3e8; 
-    font-family: 'Nunito', sans-serif;
-    position: relative;
-    min-height: 100vh;
-    overflow-x: hidden;
-    padding-bottom: 80px; 
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  /* MUDANÇA CRÍTICA AQUI: Permitir scroll vertical, esconder horizontal */
+  overflow-x: hidden;
+  padding: 40px;
 }
 
-/* Wrapper para centralizar o conteúdo */
+/* =========================================
+   WRAPPER DE CONTEÚDO
+========================================= */
 .content-wrapper-expectativas {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px 40px; 
-    position: relative; 
-    /* Garante que o Navbar/Shapes absolutos respeitem este contexto */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
 
-/* ===== Shapes Decorativos (Cores da imagem) ===== */
+/* =========================================
+   FORMAS GEOMÉTRICAS (SHAPES)
+   Adaptando as formas do seu primeiro CSS com os nomes limpos
+========================================= */
 .shape-expectativas {
-    position: absolute;
-    opacity: 0.5;
-    z-index: 1; 
-    border-radius: 50%;
+  position: absolute;
+  z-index: 0;
+  /* Mantenha em 1 para ficar atrás do conteúdo, mas visível */
+  border-radius: 50%;
 }
 
+/* Círculo Amarelo Topo Esquerdo */
 .yellow-top-expectativas {
-    width: 200px; height: 200px;
-    background: #ffe600; /* Amarelo */
-    top: 50px; left: -80px;
+  width: 500px;
+  height: 500px;
+  background: #FFF69D;
+  top: 50px;
+  left: -250px;
 }
 
+/* Círculo Azul Topo Direito */
 .blue-top-right-expectativas {
-    width: 400px; height: 400px;
-    background: #4a82c4; /* Azul */
-    top: -100px; right: 80px;
+  width: 550px;
+  height: 500px;
+  background: #6697ED;
+  top: -250px;
+  right: 700px;
+  z-index: 0;
 }
 
-.square-expectativas { border-radius: 20px; } /* Ajuste de raio para o quadrado */
+/* Quadrado Verde Meio Direito */
 .green-middle-expectativas {
-    width: 300px; height: 300px;
-    background: #92d992; /* Verde */
-    top: 150px; right: -50px;
-    opacity: 0.4;
+  width: 500px;
+  height: 300px;
+  background: #9AFFB4;
+  top: 420px;
+  right: -100px;
+  opacity: 0.4;
+  border-radius: 0; /* Mantendo como quadrado */
 }
 
+
+/* Círculo Vermelho Pequeno Meio Direito */
 .small-red-middle-expectativas {
-    width: 80px; height: 80px;
-    background: #ff6b81; /* Rosa/Vermelho */
-    top: 450px; right: 200px;
+  width: 100px;
+  height: 100px;
+  background: #ff6b81;
+  top: 650px;
+  right: 350px;
 }
 
-.large-yellow-bottom-expectativas {
-    width: 450px; height: 450px;
-    background: #ffe600; /* Amarelo */
-    bottom: -200px; right: -250px;
-    opacity: 0.3;
-}
-
-
-/* ===== Header (Título Principal) ===== */
+/* =========================================
+   HEADER (TÍTULO PRINCIPAL)
+========================================= */
 .expectativas-header-expectativas {
-    padding-top: 100px;
-    margin-bottom: 50px;
+  padding-top: 20px;
+  /* Mais sutil que 100px */
+  margin-bottom: 20px;
 }
 
 .hero-title-expectativas {
-    /* Estilo Anton da imagem */
-    font-family: 'Anton', sans-serif;
-    font-size: 6vw;
-    font-weight: 800;
-    line-height: 1.1;
-    color: #4a1d00;
-    margin: 0;
+  font-family: 'Anton', sans-serif;
+    font-size: 200px; 
+    line-height: 1;
+    color: #3e1e04; 
+    margin-bottom: 40px;
+    
+    /* === EFEITO DE ENGROSSAMENTO === */
+    text-shadow: 
+        5px 1px 0px #3e1e04, /* Deslocamento 1 */
+        -1px -1px 0px #3e1e04, /* Deslocamento 2 */
+        5px -1px 0px #3e1e04, /* Deslocamento 3 */
+        -1px 1px 0px #3e1e04; /* Deslocamento 4 */
+    /* Isso cria um contorno completo, fazendo a letra parecer mais robusta. */
 }
 
-
-/* ===== Seletor ===== */
+/* =========================================
+   SELETOR DE SÉRIE
+========================================= */
 .selector-section-expectativas {
-    margin-top: 40px;
-    margin-bottom: 20px;
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: #4a82c4; /* Azul sutil */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 30px;
+  color: #6697ED;
 }
 
-/* Remove as quebras de linha desnecessárias e estiliza o select */
-.selector-section-expectativas br { display: none; }
 .selector-section-expectativas select {
-    margin-top: 6px;
-    padding: 10px 12px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    width: 250px; 
-    background: #fff; /* Fundo branco para select */
-    font-size: 1rem;
-    cursor: pointer;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  margin-top: 6px;
+  padding: 10px 12px;
+  color: #333;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 250px;
+  background: #e0e0e0;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-family: 'nunito', sans-serif;
+}
+
+.selector-section-expectativas select:focus {
+    outline: 2px solid #aaa;
+    background: #fff;
 }
 
 
-/* ===== Card Principal de Expectativas (Onde os resultados aparecem) ===== */
+/* =========================================
+   CARD PRINCIPAL DE EXPECTATIVAS (LISTA)
+========================================= */
 .expectativas-card-wrapper-expectativas {
-    margin-top: 30px;
-    background: #fff; 
-    border-radius: 15px;
-    padding: 30px;
-    min-height: 400px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  margin-top: 30px;
+  background: #f0f0f0;
+  border-radius: 15px;
+  padding: 30px;
+  min-height: 400px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 .card-title-expectativas {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #4a1d00;
-    margin-bottom: 25px;
-    border-bottom: 2px solid #f0f0f0; /* Linha sutil de separação */
-    padding-bottom: 15px;
+  font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
 }
 
-/* Área Vazia (Empty State) */
+/* --- Estado Vazio --- */
 .empty-area-expectativas {
-    text-align: center;
-    color: #555;
-    padding: 50px 0;
+  text-align: center;
+  color: #555;
+  padding: 50px 0;
 }
 
 .icon-placeholder-expectativas {
-    font-size: 3rem;
-    color: #aaa;
-    margin-bottom: 10px;
+  font-size: 3rem;
+  color: #aaa;
+  margin-bottom: 10px;
 }
 
 .empty-text-bold-expectativas {
-    font-weight: 600;
+  font-weight: 700;
+    font-size: 1.1rem;
     margin-bottom: 5px;
 }
 
 .empty-text-small-expectativas {
-    display: block;
-    font-size: 0.9rem;
-    color: #888;
+  font-size: 0.9rem;
+    color: #777;
 }
 
-/* ===== Estilização dos Itens da Lista de Expectativas ===== */
+
+/* --- Lista de Itens --- */
 .expectativas-list-expectativas {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .expectativa-item-expectativas {
-    border-left: 6px solid #ff6b81; /* Destaque rosa na lateral */
-    padding: 15px;
-    background-color: #fcfcfc;
-    border-radius: 6px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  border-left: 6px solid #ff6b81;
+  /* Destaque rosa na lateral */
+  padding: 15px;
+  background-color: #fcfcfc;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
 }
 
 .expectativa-item-expectativas h4 {
-    margin-top: 0;
-    font-size: 1rem;
-    color: #4a1d00;
-    margin-bottom: 5px;
-    font-weight: 700;
+  margin-top: 0;
+  font-size: 1rem;
+  color: #4a1d00;
+  margin-bottom: 5px;
+  font-weight: 700;
 }
 
 .expectativa-item-expectativas .codigo-bncc-expectativas {
-    color: #ff6b81; /* Cor rosa para o código */
-    font-size: 1.1rem;
+  color: #ff6b81;
+  /* Cor rosa para o código */
+  font-size: 1.1rem;
 }
 
 .expectativa-item-expectativas .pratica-area-expectativas {
-    font-weight: 400;
-    color: #555;
+  font-weight: 400;
+  color: #555;
 }
 
 .expectativa-item-expectativas .habilidade-text-expectativas,
 .expectativa-item-expectativas .objetivo-text-expectativas {
-    font-size: 0.9rem;
-    line-height: 1.4;
-    color: #555;
-    margin-bottom: 0;
-    margin-top: 8px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #555;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+/* =========================================
+   MEDIA QUERIES (RESPONSIVIDADE)
+========================================= */
+@media (max-width: 768px) {
+  .content-wrapper {
+    padding: 20px;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .expectativas-header {
+    padding-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  .selector-section {
+    text-align: center;
+  }
+
+  .selector-section select {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  /* Reduzindo o tamanho das shapes para mobile */
+  .yellow-top,
+  .blue-top-right,
+  .green-middle,
+  .large-yellow-bottom {
+    display: none;
+    /* Simplificar para mobile */
+  }
+
+  .small-red-middle {
+    top: 20px;
+    right: 20px;
+    opacity: 0.7;
+  }
 }

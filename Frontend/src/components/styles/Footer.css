@@ -19,4 +19,31 @@
 
 .year {
   font-size: 14px;
+  z-index: 1;
+}
+
+/* =========================================
+   FORMAS GEOMÉTRICAS (SHAPES)
+========================================= */
+.shape-footer {
+    position: absolute;
+    z-index: 0;
+}
+
+/* Círculo Azul Superior Esquerdo (Fundo do título) */
+.circle-blue-top-left-footer {
+    width: 300px;
+    height: 130px;
+    background-color: #ADECFF; /* Azul cornflower */
+    left: 250px;
+}
+
+/* Círculo Amarelo Inferior Esquerdo */
+.circle-yellow-bottom-left-footer {
+    width: 130px;
+    height: 130px;
+    background-color: #fff59d;
+    border-radius: 50%;
+    right: -90px;
+    z-index: 0;
 }
