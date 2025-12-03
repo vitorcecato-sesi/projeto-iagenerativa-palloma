@@ -335,9 +335,9 @@
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 430px) {
   .main-title{
-    font-size: 5rem;
+    font-size: 2rem;
   }
 
   .member-photo{
@@ -347,12 +347,42 @@
 }
 
 @media (max-width: 500px){
+
   .main-title{
-    font-size: 7rem;
+    font-size: 4.8rem;
   }
 
   .grid-container {
     grid-template-columns: 1fr;
     gap: 50px;
+  }
+
+  .members-title{
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 370px) {
+  .main-title{
+    font-size: 4.5rem;
+  }
+
+  .member-photo{
+    width: 40px;
+    height: 40px;
+  }
+
+  .member-name {
+    font-size: 1.5rem;
+  }
+
+  .members-title{
+    font-size: 1.6rem;
+  }
+
+  .group-photo{
+    width: 85%;
+    height: auto;
+    margin-left: 6%;
   }
 }
