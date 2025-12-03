@@ -71,3 +71,14 @@
     height: 5vw;
     background-color: #6697ED;
 }
+
+
+@media screen and (max-width: 1330px) {
+    .blocoTexto{
+        margin-left: -6em;
+    }
+
+    .blocoAzulHome{
+        width: 300px;
+    }
+}
