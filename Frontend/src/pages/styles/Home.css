@@ -1,60 +1,73 @@
-    /* Importando As Fontes */
-    @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Serif+Text:ital@0;1&family=Gloock&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Serif+Text:ital@0;1&family=Gloock&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+/* Importando As Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Serif+Text:ital@0;1&family=Gloock&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Serif+Text:ital@0;1&family=Gloock&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
+.blocosNavbarHome{
+   display: flex;
+   justify-content: flex-end;
+}
 
-    .tituloHome{
-        font-family: "Anton", sans-serif;
-        font-size: 200px;       
-        color: #491900;         
-        line-height: 1; /* linhas mais próximas */
-        padding-left: 20px;
-    }
+.blocoLoginNavbarHome{
+    background-color: #FD66A7;
+    width: 10vh;
+    height: 10vh;
+    text-decoration: none; 
+    color: #491900;
+    align-content: center;
+    text-align: center;
+    font-weight: 700;
 
-    .blocoPrincipalHome {
-        display: flex;
-        flex-direction: row;
-    }
+}
 
-    .siteTodo {
-        min-height: 100vh;
-    }
+.tituloHome{
+    font-family: "Anton", sans-serif;
+    font-size: 200px;       
+    color: #491900;         
+    line-height: 1; /* linhas mais próximas */
+    padding-left: 20px;
+}
 
-    .quadradoHome{
-        width: 3vw;
-    }
+.blocoPrincipalHome {
+    display: flex;
+    flex-direction: row;
+    margin-top: -5em;
+}
 
-    .blocoTexto{
-        padding-top: 18em;
-        padding-left: 15em;
-        font-size: 1.20em;
-    }
+.siteTodo {
+    min-height: 100vh;
+}
 
-    .textoHome{
-        font-family: "Nunito", sans-serif;
-        color: #491900;
-        font-weight: 600;
-    }
+.quadradoHome{
+     width: 3vw;
+}
 
-    .blocosHome{
-        display: flex;
-        flex-direction: row;
-        gap: 6em;
-        padding-left: 4em;
-        padding-top: 4em;
-    }
+.blocoTexto{
+    padding-top: 18em;
+    padding-left: 15em;
+    font-size: 1.20em;
+}
 
-    .forma {
-        position: inherit;
-    }
+.textoHome{
+    font-family: "Nunito", sans-serif;
+    color: #491900;
+    font-weight: 600;
+}
 
-    /* substitua por */
-    .home-shape {
-        position: inherit;
-    }
+.blocosHome{
+    display: flex;
+    flex-direction: row;
+    gap: 6em;
+    padding-left: 4em;
+    padding-top: 4em;
+}
 
-    .blocoAzulHome{
-        width: 5.5vw;
-        height: 5vw;
-        background-color: #6697ED;
-    }
+/* substitua por */
+.home-shape {
+    position: inherit;
+}
+
+.blocoAzulHome{
+    width: 5.5vw;
+    height: 5vw;
+    background-color: #6697ED;
+}
