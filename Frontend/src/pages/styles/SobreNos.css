@@ -1,296 +1,175 @@
-@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Poppins:wght@400;700&display=swap');
+/* =========================================
+    PÁGINA SOBRE NÓS (NOVOS ESTILOS)
+========================================= */
 
-/* --- Configurações Gerais --- */
-.page-container-sobre {
-  font-family: 'Poppins', sans-serif;
-  background-color: #FAFBF5; /* Cor creme do fundo */
-  min-height: 100vh;
-  position: relative;
-  overflow-x: hidden; /* Evita rolagem horizontal por causa dos círculos */
-  padding-bottom: 20px;
+/* --- NOVAS FORMAS GEOMÉTRICAS PARA O SOBRE NÓS --- */
+
+/* Círculo Azul Grande (Topo Esquerdo - Fundo do título) */
+.sobre-nos-retangulo-verde {
+    width: 500px;
+    height: 650px;
+    background-color: #9AFFB4; /* Azul mais claro para destacar o título */
+    top: -200px;
+    left: -200px;
+    opacity: 1;
 }
 
-/* --- Elementos Decorativos (Círculos) --- */
-.circle-sobre {
-  position: absolute;
-  border-radius: 50%;
-  z-index: 0;
+/* Círculo Amarelo (Topo, atrás do título) */
+.sobre-nos-circle-yellow-top {
+    width: 400px;
+    height: 300px;
+    background-color: #FFF69D;
+    border-radius: 50%;
+    top: -200px;
+    left: 200px;
 }
 
-.top-yellow-sobre {
-  top: -50px;
-  left: 10%;
-  width: 200px;
-  height: 200px;
-  background-color: #FFF59D;
+/* Bolinha Vermelha Pequena (Topo) */
+.sobre-nos-circle-red-small-top {
+    width: 150px;
+    height: 150px;
+    background-color: #FF7171;
+    border-radius: 50%;
+    top: 320px;
+    right: 30px;
+    z-index: 1;
 }
 
-.top-blue-sobre {
-  top: 20px;
-  right: 20%;
-  width: 350px;
-  height: 350px;
-  background-color: #B3E5FC;
+/* Círculo Azul Claro (Lado Direito, atrás da foto) */
+.sobre-nos-circle-lightblue-right {
+    width: 500px;
+    height: 500px;
+    background-color: #ADECFF; 
+    border-radius: 50%;
+    top: 100px;
+    right: 30%;
 }
 
-.red-dot-left-sobre {
-  top: 38%;
-  left: 20px;
-  width: 60px;
-  height: 60px;
-  background-color: #FF8A80;
-  z-index: 1;
-}
-
-.red-dot-right-sobre {
-  top: 180px;
-  right: -20px;
-  width: 80px;
-  height: 80px;
-  background-color: #FF8A80;
-  z-index: 1;
-}
-
-.bottom-yellow-sobre {
-  bottom: -50px;
-  right: -50px;
-  width: 200px;
-  height: 200px;
-  background-color: #FFF59D;
-  z-index: -1;
+/* Círculo Vermelho Grande (Lado Esquerdo, perto do texto) */
+.sobre-nos-circle-red-left {
+    width: 150px;
+    height: 150px;
+    background-color: #FF7171;
+    border-radius: 50%;
+    top: 775px;
+    left: 15px;
+    z-index: 1;
 }
 
 
-/* --- Cabeçalho --- */
-.header-sobre {
-  position: relative;
-  padding-left: 5%;
-  padding-top: 20px;
-  z-index: 10;
+/* --- LAYOUT DO CONTEÚDO --- */
+
+.sobre-nos-content {
+    padding-left: 10px;
+    margin-top: -50px;
 }
 
-.main-title-sobre {
-  font-family: 'Alfa Slab One', cursive;
-  font-size: 7.5rem;
-  color: #3E2723;
-  margin: 0;
-  line-height: 1;
-  text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+/* Título Principal */
+.sobre-nos-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 200px; 
+    line-height: 1;
+    color: #3e1e04; 
+    margin-bottom: 40px;
+    
+    /* === EFEITO DE ENGROSSAMENTO === */
+    text-shadow: 
+        5px 1px 0px #3e1e04, /* Deslocamento 1 */
+        -1px -1px 0px #3e1e04, /* Deslocamento 2 */
+        5px -1px 0px #3e1e04, /* Deslocamento 3 */
+        -1px 1px 0px #3e1e04; /* Deslocamento 4 */
+    /* Isso cria um contorno completo, fazendo a letra parecer mais robusta. */
 }
 
-/* --- Seção de Conteúdo (Texto Azul + Foto) --- */
-.content-section-sobre {
-  display: flex;
-  flex-direction: row;
-  margin-top: 40px;
-  position: relative;
-  min-height: 350px;
-}
-
-.blue-box-sobre {
-  background-color: #7EB6FF;
-  width: 45%;
-  padding: 40px 5%;
-  color: white;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  display: flex;
-  align-items: center;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  z-index: 2;
-  text-align: justify;
-}
-
-.group-photo-container-sobre {
-  position: absolute;
-  right: 5%;
-  top: -20px;
-  width: 43%;
-  height: 95%;
-  z-index: 3;
-  display: flex;
-  align-items: center;
-}
-
-.group-photo-sobre {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  border: 5px solid white;
-  object-fit: cover;
-}
-
-/* --- Seção Integrantes --- */
-.members-section-sobre {
-  padding: 40px 5%;
-  margin-top: 50px;
-  z-index: 10;
-  position: relative;
-}
-
-.members-title-sobre {
-  color: #7EB6FF;
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 30px;
-}
-
-.grid-container-sobre {
-  display: grid;
-  /* force three columns on wide screens so layout is 3 on top and 3 on bottom */
-  grid-template-columns: repeat(3, minmax(200px, 1fr));
-  gap: 40px;
-  justify-content: center;
-  width: 100%;
-  max-width: 1200px; /* keep the grid from spreading too wide */
-  margin: 0 auto;
-  justify-items: center; /* center cards inside each column */
-}
-
-.member-card-sobre {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.photo-placeholder-sobre {
-  /* make the placeholder a square so it can be a perfect circle */
-  width: 180px;
-  height: 180px;
-  background-color: #E0E0E0;
-  margin-bottom: 15px;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-  overflow: hidden; /* Garante que a imagem não saia da div */
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.photo-placeholder-sobre img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-/* explicit class for member images - keeps future styles local and clear */
-.member-photo-sobre {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-/* light-blue border and subtle hover effect for member avatars */
-.photo-placeholder-sobre {
-  /* keep circular container; border sits outside the image */
-  border: 4px solid #81D4FA; /* azul claro */
-  transition: transform 0.18s ease, box-shadow 0.18s ease; /* smooth hover */
-}
-
-.member-card-sobre:hover .photo-placeholder-sobre,
-.member-photo-sobre:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-}
-
-.member-name-sobre {
-  color: #81D4FA;
-  font-weight: bold;
-  font-size: 1.2rem;
-  text-align: center;
-  margin: 0;
-}
-
-@media (max-width: 1337px) {
-  .group-photo{
-    height: 115%;
-    width: 100%;
-  }
-}
-
-@media (max-width: 1084){
-
-  .group-photo{
-    height: 100%;
-    width: 200%;
-  }
-}
-
-@media (max-width: 1075px) {
-  .content-section {
-    flex-direction: column;
+/* Seção de Texto e Imagem */
+.about-us-hero-section {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    min-height: auto;
-  }
+    gap: 40px;
+    margin-top: 100px;
+}
 
-  .blue-box {
-    width: 80%;
-    border-radius: 10px;
-    font-size: 1.4rem;
+.about-text-column {
+    flex: 1;
+    background-color: #6697ED; /* Cor de fundo suave para o texto */
+    padding: 25px;
+    border-radius: 15px;
+    max-width: 10000px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
 
-  }
+.sobre-nos-paragraph {
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: justify;
+    font-family: 'nunito', sans-serif;
+}
 
-  .group-photo-container {
-    position: static;
-    width: 95%;
+/* Garante o negrito no texto */
+.sobre-nos-paragraph strong {
+    font-weight: 700;
+    color: #000;
+}
+
+.about-image-column {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.group-photo {
+    width: 100%;
+    max-width: 700px; /* Limite o tamanho da imagem */
     height: auto;
-    margin-top: 20px;
-  }
-
-  .group-photo {
-    width: 70%;
-    height: auto;
-    margin-left: 14%;
-  }
-
-  .grid-container {
-    grid-template-columns: repeat(2, minmax(150px, 1fr));
-    gap: 70px;
-  }
-
-.members-title{
-    font-size: 2.5rem;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-.member-name {
-    font-size: 2rem;
-}
-}
+/* --- Seção de Integrantes --- */
 
-@media (max-width: 798px) {
-  .main-title{
-    font-size: 7rem;
-  }
-
-  .group-photo{
-    width: 80%;
-    height: auto;
-    margin-left: 10%;
-  }
+.integrantes-section {
+    margin-top: 80px;
+    margin-bottom: 50px;
+    padding: 0 40px;
 }
 
-@media (max-width: 400px) {
-  .main-title{
-    font-size: 5rem;
-  }
-
-  .member-photo{
-    width: 140px;
-    height: 140px;
-  }
+.integrantes-title {
+    font-size: 1.8rem;
+    font-weight: 1000;
+    color: #6697ED;
+    margin-bottom: 30px;
+    font-family: 'nunito', sans-serif;
 }
 
-@media (max-width: 500px){
-  .main-title{
-    font-size: 7rem;
-  }
+.integrantes-grid {
+    display: grid;
+    /* 3 colunas em telas maiores */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 40px 60px;
+    padding: 0 50px;
+}
 
-  .grid-container {
-    grid-template-columns: 1fr;
-    gap: 50px;
-  }
+/* imagem do integrante (ou img dentro do card) -- reduz tamanho e mantém proporção */
+.integrante-photo,
+.integrante-card img,
+.integrante-placeholder-image {
+    width: 220px;       /* tamanho reduzido */
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin: 0 auto 15px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+.integrante-card {
+    text-align: center;
+}
+
+.integrante-name {
+    font-size: 1.5rem;
+    font-weight: 1000;
+    color: #ADECFF; /* Azul cornflower do seu design original */
 }

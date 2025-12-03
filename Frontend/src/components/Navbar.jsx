@@ -6,7 +6,7 @@ export default function Navbar() {
     <>
       <nav className="navbar">
         <Link className="blocoLoginNavbar" to="/home"> Home </Link>
-        <Link className="blocoSobreNavbar" to="/sobre"> Sobre </Link>
+        <Link className="blocoSobreNavbar" to="/sobrenos"> Sobre </Link>
       </nav>
     </>
   );

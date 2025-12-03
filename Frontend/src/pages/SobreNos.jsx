@@ -1,97 +1,91 @@
-import React from 'react';
-import './styles/SobreGrupo.css'; // Importando o arquivo CSS criado acima
-import imgGrupo from "../assets/imgGrupo.png";
+import React from "react";
+import Navbar from "../components/Navbar.jsx"; // Assumindo que você tem um componente Navbar
+import Footer from '../components/Footer.jsx'; // Assumindo que você tem um componente Footer
 
-import FtLaura from "../assets/FtLaura.png";
-import FtLucas from "../assets/FtLucas.png";
-import FtMilena from "../assets/FtMilena.png";
-import FtPietro from "../assets/FtPietro.png";
-import FtPyetro from "../assets/FtPyetro.png";
-import FtVitor from "../assets/FtVitor.png";
+// O CSS desta página será adicionado no final do arquivo AssistenteIA.css
+import "./styles/SobreNos.css";
+// Você pode considerar criar um novo CSS, mas para manter a consistência, 
+// vamos adicionar os novos estilos no seu arquivo existente.
+
+// Array de dados dos integrantes para renderização dinâmica
+const integrantes = [
+    { nome: "Laura Betti", fotoUrl: "../src/assets/FtLaura.png" }, // Foto real do integrante
+    { nome: "Lucas Casagrande", fotoUrl: "../src/assets/FtLucas.png" },
+    { nome: "Milena", fotoUrl: "../src/assets/FtMilena.png" },
+    { nome: "Pietro Melle", fotoUrl: "../src/assets/FtPietro.png" },
+    { nome: "Pyetro Joaquim", fotoUrl: "../src/assets/FtPyetro.png" },
+    { nome: "Vitor Geraldo", fotoUrl: "../src/assets/FtVitor.png" },
+];
+
+// Componente para um único card de integrante
+const IntegranteCard = ({ nome, fotoUrl }) => (
+    <section className="integrante-card">
+        {/* Simula a área da foto. Você substituirá isso por uma tag <img> real. */}
+        <section className="integrante-placeholder-image">
+            <img src={fotoUrl} alt={`Foto de ${nome}`} className="integrante-photo" />
+           </section>
+        <p className="integrante-name">{nome}</p>
+    </section>
+);
+
+export default function SobreNos() {
+    return (
+        <section className="page-container sobre-nos-page">
+
+            <section className="shape sobre-nos-retangulo-verde"></section>
+            <section className="shape sobre-nos-circle-red-small-top"></section>
+            <section className="shape sobre-nos-circle-red-left"></section>
+            <section className="shape sobre-nos-circle-yellow-top"></section>
+            {/* O círculo azul claro do lado direito (atrás da foto) */}
+            <section className="shape sobre-nos-circle-lightblue-right"></section>
 
 
+            <section className="content-wrapper">
+                <Navbar />
 
-const SobreNos = () => {
-  // Lista de integrantes
-  const integrantes = [
-    { name: "Laura Betti" },
-    { name: "Lucas Casagrande" },
-    { name: "Milena" },
-    { name: "Pietro Melle" },
-    { name: "Pyetro Joaquim" },
-    { name: "Vitor Geraldo" },
-  ];
+                <section className="sobre-nos-content">
+                    {/* --- Seção de Título e Texto --- */}
+                    <header className="sobre-nos-header">
+                        <h1 className="sobre-nos-title">Sobre nós</h1>
+                    </header>
 
-  return (
-    <div className="page-container-sobre">
-      
-      {/* Elementos Decorativos de Fundo */}
-      <div className="circle-sobre top-yellow-sobre"></div>
-      <div className="circle-sobre top-blue-sobre"></div>
-      <div className="circle-sobre red-dot-left-sobre"></div>
-      <div className="circle-sobre red-dot-right-sobre"></div>
+                    <section className="about-us-hero-section">
+                        {/* Coluna do Texto */}
+                        <section className="about-text-column">
+                            <p className="sobre-nos-paragraph">
+                                O grupo 3 é formado por Laura Betti, Lucas Casagrande, Milena, Pietro Melle, Pyetro Joaquim e Vitor Geraldo. Nosso grupo se destaca por valorizar 
+                                três princípios fundamentais: honestidade, comprometimento e união. Acreditamos que a honestidade é essencial para manter a confiança e o respeito 
+                                entre os integrantes, o comprometimento demonstra nossa dedicação em cada atividade e desejo de alcançar sempre o melhor resultado; já a união é o 
+                                que fortalece nossa equipe, tornando o trabalho mais leve, produtivo e harmonioso. Esses valores guiam o grupo 3 mesmo diante de desafios, e é por 
+                                isso que cada conquista se torna ainda mais significativa.
+                            </p>
+                        </section>
 
-    
-      {/* Título Principal */}
-      <header className="header-sobre">
-        <h1 className="main-title-sobre">Sobre nós</h1>
-      </header>
+                        {/* Coluna da Foto */}
+                        <section className="about-image-column">
+                            {/* Este é o espaço para a foto do grupo */}
+                            {/* Idealmente você usaria a tag <img> com o source da imagem */}
+                            <img
+                                src="../src/assets/imgGrupo.png" // Substitua pelo caminho real da sua foto
+                                alt="Foto do grupo 3, incluindo Laura Betti, Lucas Casagrande, Milena, Pietro Melle, Pyetro Joaquim e Vitor Geraldo."
+                                className="group-photo"
+                            />
+                        </section>
+                    </section>
 
-      {/* Seção de Conteúdo (Texto + Foto) */}
-      <section className="content-section-sobre">
-        <div className="blue-box-sobre">
-          <p>
-            O grupo 3 é formado por Laura Betti, Lucas Casagrande, Milena, Pietro Melle, 
-            Pyetro Joaquim e Vitor Geraldo. Nosso grupo se destaca por valorizar três 
-            princípios fundamentais: honestidade, comprometimento e união. Acreditamos 
-            que a honestidade é essencial para manter a confiança e o respeito entre os 
-            integrantes, o comprometimento demonstra nossa dedicação em cada atividade 
-            e desejo de alcançar sempre o melhor resultado; já a união é o que fortalece 
-            nossa equipe, tornando o trabalho mais leve, produtivo e harmonioso. Esses 
-            valores guiam o grupo 3 mesmo diante de desafios, e é por isso que cada 
-            conquista se torna ainda mais significativa.
-          </p>
-        </div>
-        
-        {/* Container da foto do grupo */}
-        <div className="group-photo-container-sobre">
-          <img 
-            src={imgGrupo} 
-            alt="Grupo 3" 
-            className="group-photo-sobre" 
-          />
-        </div>
-      </section>
+                    {/* --- Seção de Integrantes --- */}
+                    <section className="integrantes-section">
+                        <h2 className="integrantes-title">Integrantes do grupo:</h2>
+                        <section className="integrantes-grid">
+                            {integrantes.map((integrante, index) => (
+                                <IntegranteCard key={index} {...integrante} />
+                            ))}
+                        </section>
+                    </section>
+                </section>
 
-      {/* Seção Integrantes */}
-      <section className="members-section-sobre">
-        <h2 className="members-title-sobre">Integrantes do grupo:</h2>
-
-        <div className="grid-container-sobre">
-          {integrantes.map((member, index) => (
-            <div key={index} className="member-card-sobre">
-              <div className="photo-placeholder-sobre">
-                 {/* Substitua o src abaixo pelas fotos reais */}
-                 <img 
-                    src={
-                      index === 0 ? FtLaura :
-                      index === 1 ? FtLucas :
-                      index === 2 ? FtMilena :
-                      index === 3 ? FtPietro :
-                      index === 4 ? FtPyetro :
-                      FtVitor} 
-                      alt={member.name}
-                      className="member-photo-sobre"
-                 />
-              </div>
-              <p className="member-name-sobre">{member.name}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-    </div>
-  );
-};
-
-export default SobreNos;
+                <Footer />
+            </section>
+        </section>
+    );
+}

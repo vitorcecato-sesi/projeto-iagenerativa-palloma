@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import './App.css'
 
+import TelaPrincipal from './pages/TelaPrincipal.jsx'
 import Login from './pages/Login.jsx'
 import AssistenteIA from './pages/AssistenteIA.jsx'
 import Expectativas from './pages/Expectativas.jsx'
@@ -13,7 +14,8 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Login />} />
+          <Route path='/' element={<TelaPrincipal />} />
+          <Route path='/login' element={<Login />} />
           <Route path='/home' element={<AssistenteIA />} />
           <Route path='/expectativas' element={<Expectativas />} />
           <Route path='/sobrenos' element={<SobreNos />} />
