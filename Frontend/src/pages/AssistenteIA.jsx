@@ -23,7 +23,7 @@ export default function AssistenteIA() {
   
   const resultRef = useRef(null);
 
-  const API_KEY = "AIzaSyCeBaBqYT9ztgeSmklcWbu6K6QmD1uzsr8"; 
+  const API_KEY = import.meta.env.VITE_GEMINI_KEY; 
   const MODEL = "gemini-2.5-flash";
 
   const sugestoes = [
