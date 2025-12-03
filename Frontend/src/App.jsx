@@ -4,6 +4,7 @@ import './App.css'
 
 import Login from './pages/Login.jsx'
 import AssistenteIA from './pages/AssistenteIA.jsx'
+import Expectativas from './pages/Expectativas.jsx'
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path='/home' element={<AssistenteIA />} />
+          <Route path='/expectativas' element={<Expectativas />} />
         </Routes>
       </BrowserRouter>
     </>

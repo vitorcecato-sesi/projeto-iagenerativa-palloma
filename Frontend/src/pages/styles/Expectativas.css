@@ -1,0 +1,193 @@
+/* Inclusão de fontes e Font Awesome (necessário para os ícones) */
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+
+
+/* ===== Layout Geral ===== */
+.page-container-expectativas {
+    /* Cor de fundo próxima do tom bege/creme da imagem */
+    background-color: #f7f3e8; 
+    font-family: 'Nunito', sans-serif;
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding-bottom: 80px; 
+}
+
+/* Wrapper para centralizar o conteúdo */
+.content-wrapper-expectativas {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 40px; 
+    position: relative; 
+    /* Garante que o Navbar/Shapes absolutos respeitem este contexto */
+}
+
+/* ===== Shapes Decorativos (Cores da imagem) ===== */
+.shape-expectativas {
+    position: absolute;
+    opacity: 0.5;
+    z-index: 1; 
+    border-radius: 50%;
+}
+
+.yellow-top-expectativas {
+    width: 200px; height: 200px;
+    background: #ffe600; /* Amarelo */
+    top: 50px; left: -80px;
+}
+
+.blue-top-right-expectativas {
+    width: 400px; height: 400px;
+    background: #4a82c4; /* Azul */
+    top: -100px; right: 80px;
+}
+
+.square-expectativas { border-radius: 20px; } /* Ajuste de raio para o quadrado */
+.green-middle-expectativas {
+    width: 300px; height: 300px;
+    background: #92d992; /* Verde */
+    top: 150px; right: -50px;
+    opacity: 0.4;
+}
+
+.small-red-middle-expectativas {
+    width: 80px; height: 80px;
+    background: #ff6b81; /* Rosa/Vermelho */
+    top: 450px; right: 200px;
+}
+
+.large-yellow-bottom-expectativas {
+    width: 450px; height: 450px;
+    background: #ffe600; /* Amarelo */
+    bottom: -200px; right: -250px;
+    opacity: 0.3;
+}
+
+
+/* ===== Header (Título Principal) ===== */
+.expectativas-header-expectativas {
+    padding-top: 100px;
+    margin-bottom: 50px;
+}
+
+.hero-title-expectativas {
+    /* Estilo Anton da imagem */
+    font-family: 'Anton', sans-serif;
+    font-size: 6vw;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #4a1d00;
+    margin: 0;
+}
+
+
+/* ===== Seletor ===== */
+.selector-section-expectativas {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #4a82c4; /* Azul sutil */
+}
+
+/* Remove as quebras de linha desnecessárias e estiliza o select */
+.selector-section-expectativas br { display: none; }
+.selector-section-expectativas select {
+    margin-top: 6px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 250px; 
+    background: #fff; /* Fundo branco para select */
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+
+/* ===== Card Principal de Expectativas (Onde os resultados aparecem) ===== */
+.expectativas-card-wrapper-expectativas {
+    margin-top: 30px;
+    background: #fff; 
+    border-radius: 15px;
+    padding: 30px;
+    min-height: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.card-title-expectativas {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #4a1d00;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #f0f0f0; /* Linha sutil de separação */
+    padding-bottom: 15px;
+}
+
+/* Área Vazia (Empty State) */
+.empty-area-expectativas {
+    text-align: center;
+    color: #555;
+    padding: 50px 0;
+}
+
+.icon-placeholder-expectativas {
+    font-size: 3rem;
+    color: #aaa;
+    margin-bottom: 10px;
+}
+
+.empty-text-bold-expectativas {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.empty-text-small-expectativas {
+    display: block;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* ===== Estilização dos Itens da Lista de Expectativas ===== */
+.expectativas-list-expectativas {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.expectativa-item-expectativas {
+    border-left: 6px solid #ff6b81; /* Destaque rosa na lateral */
+    padding: 15px;
+    background-color: #fcfcfc;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.expectativa-item-expectativas h4 {
+    margin-top: 0;
+    font-size: 1rem;
+    color: #4a1d00;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.expectativa-item-expectativas .codigo-bncc-expectativas {
+    color: #ff6b81; /* Cor rosa para o código */
+    font-size: 1.1rem;
+}
+
+.expectativa-item-expectativas .pratica-area-expectativas {
+    font-weight: 400;
+    color: #555;
+}
+
+.expectativa-item-expectativas .habilidade-text-expectativas,
+.expectativa-item-expectativas .objetivo-text-expectativas {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #555;
+    margin-bottom: 0;
+    margin-top: 8px;
+}
