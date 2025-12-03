@@ -1,0 +1,487 @@
+/* =========================================
+   FONTES
+========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Nunito:wght@400;600;700&display=swap');
+
+/* =========================================
+   RESET & BASE
+========================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #fcfcf8;
+    color: #333;
+}
+
+/* =========================================
+   CONTAINER PRINCIPAL
+========================================= */
+.page-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    /* MUDANÇA CRÍTICA AQUI: Permitir scroll vertical, esconder horizontal */
+    overflow-x: hidden; 
+    padding: 40px;
+}
+
+/* =========================================
+   FORMAS GEOMÉTRICAS (SHAPES)
+========================================= */
+.shape {
+    position: absolute;
+    z-index: 0;
+}
+
+/* Círculo Azul Superior Esquerdo (Fundo do título) */
+.circle-blue-top-left {
+    width: 500px;
+    height: 500px;
+    background-color: #6495ed; /* Azul cornflower */
+    border-radius: 50%;
+    top: -120px;
+    left: -100px;
+    opacity: 0.8;
+}
+
+/* Círculo Amarelo Inferior Esquerdo */
+.circle-yellow-bottom-left {
+    width: 400px;
+    height: 400px;
+    background-color: #fff59d;
+    border-radius: 50%;
+    bottom: 38%;
+    left: -150px;
+}
+
+/* Círculo Verde Inferior Direito */
+.circle-green-bottom-right {
+    width: 300px;
+    height: 300px;
+    background-color: #49F774;
+    border-radius: 50%;
+    bottom: 35%;
+    right: -85px;
+}
+
+/* Retângulo Verde Topo (cortado) */
+.rect-green-top {
+    width: 300px;
+    height: 150px;
+    background-color: #9AFFB4;
+    top: 0;
+    right: 21%;
+}
+
+/* Círculo Vermelho Topo (cortado) */
+.circle-red-top {
+    width: 100px;
+    height: 100px;
+    background-color: #ff8a80; /* Vermelho claro */
+    border-radius: 50%;
+    top: -40px;
+    right: 36%;
+}
+
+/* Bolinha Vermelha Meio (perto do form) */
+.circle-red-middle {
+    width: 100px;
+    height: 100px;
+    background-color: #ff8a80;
+    border-radius: 50%;
+    top: 22%;
+    left: 49.1%;
+}
+
+/* Retângulo Azul (decoração extra bottom-left, opcional da sua imagem) */
+.rect-blue-bottom-left {
+    width: 200px;
+    height: 150px;
+    background-color: #b3e5fc;
+    bottom: -50px;
+    left: 10%;
+    z-index: -1;
+}
+
+/* =========================================
+   WRAPPER DE CONTEÚDO (Z-INDEX ALTO)
+========================================= */
+.content-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+/* =========================================
+   SEÇÃO SUPERIOR (HERO + FORM)
+========================================= */
+.top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-left: 10px;
+    margin-top: -80px;
+    gap: 50px;
+}
+
+/* --- Lado Esquerdo: Hero Title --- */
+.hero-column {
+    flex: 1;
+    margin-top: -40px;
+}
+
+.hero-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 200px; 
+    line-height: 1;
+    color: #3e1e04; 
+    margin-bottom: 40px;
+    
+    /* === EFEITO DE ENGROSSAMENTO === */
+    text-shadow: 
+        5px 1px 0px #3e1e04, /* Deslocamento 1 */
+        -1px -1px 0px #3e1e04, /* Deslocamento 2 */
+        5px -1px 0px #3e1e04, /* Deslocamento 3 */
+        -1px 1px 0px #3e1e04; /* Deslocamento 4 */
+    /* Isso cria um contorno completo, fazendo a letra parecer mais robusta. */
+}
+
+.expectations-btn-wrapper {
+    padding-left: 150px;
+}
+
+.expectations-btn {
+    background-color: #ff9eb5; /* Rosa */
+    color: white;
+    border: none;
+    text-decoration: none;
+    padding: 15px 25px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+    text-align: left;
+    line-height: 1.2;
+    max-width: 55%;
+}
+
+.expectations-btn:hover {
+    transform: translateY(-2px);
+}
+
+.icon-pointer {
+    font-size: 1.5rem;
+    border-radius: 4px;
+    padding: 2px 5px;
+}
+
+/* --- Lado Direito: Form Card --- */
+.form-section {
+    flex: 1;
+    padding-left: 70px;
+    padding-top: 150px;
+}
+
+.form-card {
+    flex: 1;
+    background-color: #eeeeee; /* Cinza claro */
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 700px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.form-title {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px; 
+}
+
+.input-group label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: none; /* Estilo flat */
+    background-color: #e0e0e0; /* Input mais escuro que o card */
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+    outline: 2px solid #aaa;
+    background: #fff;
+}
+
+/* Tamanho do TextArea (Área de texto) para a Observação do formulário */
+.input-group textarea {
+    height: 150px;
+    resize: none;
+}
+
+/* Sugestões (Chips) */
+.suggestions-chips {
+    margin-bottom: 15px;
+}
+
+.suggestion-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #666;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.chips-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.chip {
+    background-color: #dcdcdc;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    color: #555;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.chip:hover {
+    background-color: #ccc;
+    color: #000;
+}
+
+/* Linha com inputs lado a lado */
+.row-inputs {
+    display: flex;
+    gap: 15px;
+}
+
+.half {
+    flex: 1;
+}
+
+/* Botão Gerar */
+.generate-btn {
+    width: 100%;
+    background-color: #74c686; /* Verde */
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 25px; /* Bem arredondado */
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.generate-btn:hover {
+    background-color: #5cb870;
+}
+
+.generate-btn:disabled {
+    background-color: #a5d6af;
+    cursor: not-allowed;
+}
+
+/* =========================================
+   SEÇÃO INFERIOR (RESULTADO)
+========================================= */
+.result-section {
+    margin-top: 50px;
+}
+
+.result-title {
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.result-paper {
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    min-height: 300px;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+
+}
+
+/* Placeholder */
+.empty-state {
+    text-align: center;
+    color: #555;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty-icon {
+    font-size: 3rem;
+    background: #dcdcdc;
+    width: 80px;
+    height: 80px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.empty-text-bold {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.empty-text-small {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Conteúdo Gerado */
+.ia-content {
+    width: 100%;
+    text-align: left;
+    white-space: pre-wrap;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Loading */
+.loading-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #666;
+}
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #74c686;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* =========================================
+   ESTILOS DO TEXTO DA IA
+========================================= */
+
+.ia-content {
+    width: 100%;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Títulos gerados (Ex: "EXPECTATIVAS:") */
+.ia-subtitle {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #2c3e50; /* Azul escuro quase preto */
+    margin-top: 25px;
+    margin-bottom: 12px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #74c686; /* Linha verde sutil embaixo do título */
+    display: inline-block;
+}
+
+/* Parágrafos */
+.ia-paragraph {
+    margin-bottom: 12px;
+    font-size: 1rem;
+    color: #555;
+    text-align: justify;
+}
+
+/* Listas */
+.ia-list {
+    margin-bottom: 20px;
+    padding-left: 25px; /* Recuo para os bullets */
+}
+
+.ia-list li {
+    margin-bottom: 8px;
+    list-style-type: disc; /* Bolinha clássica */
+    color: #555;
+}
+
+/* Garante que o negrito (strong) fique destacado */
+strong {
+    font-weight: 700;
+    color: #000;
+}
+
+/* =========================================
+   MEDIA QUERIES (RESPONSIVIDADE)
+========================================= */
+@media (max-width: 900px) {
+    .top-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-title {
+        font-size: 4rem;
+        text-align: center;
+    }
+
+    .hero-column {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .form-card {
+        width: 100%;
+    }
+}

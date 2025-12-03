@@ -1,6 +1,8 @@
 .navbar{
    display: flex;
-   justify-content: end;
+   justify-content: flex-end;
+   margin-top: -40px;
+   margin-right: -38px;
 }
 
 .blocoLoginNavbar{
@@ -25,4 +27,5 @@
     text-align: center;
     border-radius: 10em;
     font-weight: 700;
+
 }
