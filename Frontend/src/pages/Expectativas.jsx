@@ -1,30 +1,9 @@
-// ...existing code...
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import "./styles/Expectativas.css";
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 
-import { 
-    expectativas6,
-    expectativas7,
-    expectativas8,
-    expectativas9,
-    expectativas1EM,
-    expectativas2EM,
-    expectativas3EM,
-} from "../dadosExpectativas";
-
-// Mapeamento local dos dados importados para a seleção
-const dadosExpectativasMap = {
-    "6º ano": expectativas6 || [],
-    "7º ano": expectativas7 || [],
-    "8º ano": expectativas8 || [],
-    "9º ano": expectativas9 || [],
-    "1º ano Ensino Médio": expectativas1EM || [],
-    "2º ano Ensino Médio": expectativas2EM || [],
-    "3º ano Ensino Médio": expectativas3EM || [],
-};
+// Agora as expectativas serão carregadas via API generativa (Gemini)
 
 // Card de expectativa
 const ExpectativaCard = ({ expectativa }) => (
@@ -43,17 +22,95 @@ const ExpectativaCard = ({ expectativa }) => (
 );
 
 export default function Expectativas() {
-  const navigate = useNavigate();
 
   // iniciar sem série selecionada para obrigar escolha do usuário
   const [serie, setSerie] = useState("");
-  const seriesDisponiveis = Object.keys(dadosExpectativasMap);
-  const expectativasDaSerie = serie ? (dadosExpectativasMap[serie] || []) : [];
+  const [expectativasDaSerie, setExpectativasDaSerie] = useState([]);
+  const [loadingApi, setLoadingApi] = useState(false);
+  const [apiError, setApiError] = useState(null);
+
+  const seriesDisponiveis = [
+    "6º ano",
+    "7º ano",
+    "8º ano",
+    "9º ano",
+    "1º ano Ensino Médio",
+    "2º ano Ensino Médio",
+    "3º ano Ensino Médio",
+  ];
 
   useEffect(() => {
-    console.log("Série selecionada:", serie);
-    console.log("Expectativas carregadas:", expectativasDaSerie);
-  }, [serie, expectativasDaSerie]);
+    if (!serie) {
+      setExpectativasDaSerie([]);
+      return;
+    }
+
+    // quando a série mudar, buscar via API
+    const fetchExpectativas = async (serieSelecionada) => {
+      setLoadingApi(true);
+      setApiError(null);
+      setExpectativasDaSerie([]);
+
+      const API_KEY = "AIzaSyCU8AHdMCQH0v6qV7CO0bMAL_M2WowH4wY";
+      const MODEL = "gemini-2.5-flash";
+
+      const prompt = `Você é um assistente que extrai, a partir do documento da BNCC (link abaixo), as EXPECTATIVAS/objetivos de aprendizagem correspondentes à série informada. Retorne SOMENTE um JSON válido — um array de objetos — onde cada objeto possui as chaves: "codigo", "praticas", "habilidades", "objetivos" (objetivos pode ser um array de strings ou uma string). NÃO inclua texto adicional fora do JSON. Use o link como fonte:
+https://www.alex.pro.br/BNCC%20L%C3%ADngua%20Portuguesa.pdf
+
+Série solicitada: ${serieSelecionada}
+
+Exemplo de saída esperada (JSON):
+[
+  {"codigo":"EF06LP01","praticas":"Leitura","habilidades":"Ler...","objetivos":["Identificar..."]},
+  ...
+]
+`;
+
+      try {
+        const resp = await fetch(
+          `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "x-goog-api-key": API_KEY,
+            },
+            body: JSON.stringify({
+              contents: [{ parts: [{ text: prompt }] }],
+            }),
+          }
+        );
+
+        const data = await resp.json();
+        const raw = data?.candidates?.[0]?.content?.parts?.[0]?.text || "";
+
+        // tentar extrair JSON do texto retornado
+        const match = raw.match(/(\[([\s\S]*)\])/);
+        if (match && match[1]) {
+          try {
+            const parsed = JSON.parse(match[1]);
+            if (Array.isArray(parsed)) {
+              setExpectativasDaSerie(parsed);
+            } else {
+              setApiError("Resposta não é um array JSON válido.");
+            }
+          } catch (err) {
+            console.error(err);
+            setApiError("Falha ao parsear JSON retornado pela API.");
+          }
+        } else {
+          setApiError("Não foi possível extrair JSON válido da resposta da API.");
+        }
+      } catch (e) {
+        console.error(e);
+        setApiError("Erro de conexão com a API.");
+      } finally {
+        setLoadingApi(false);
+      }
+    };
+
+    fetchExpectativas(serie);
+  }, [serie]);
 
   return (
     <section className="page-container-expectativas">
@@ -96,6 +153,22 @@ export default function Expectativas() {
               </section>
               <p className="empty-text-bold-expectativas">Selecione uma Série / Ano acima para ver as expectativas.</p>
               <span className="empty-text-small-expectativas">Escolha a Série e a lista aparecerá aqui.</span>
+            </section>
+          ) : loadingApi ? (
+            <section className="empty-area-expectativas">
+              <section className="icon-placeholder-expectativas">
+                <i className="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
+              </section>
+              <p className="empty-text-bold-expectativas">Buscando expectativas para {serie}...</p>
+              <span className="empty-text-small-expectativas">Aguarde enquanto consultamos a fonte BNCC.</span>
+            </section>
+          ) : apiError ? (
+            <section className="empty-area-expectativas">
+              <section className="icon-placeholder-expectativas">
+                <i className="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+              </section>
+              <p className="empty-text-bold-expectativas">Erro: {apiError}</p>
+              <span className="empty-text-small-expectativas">Tente novamente ou verifique sua conexão/API.</span>
             </section>
           ) : expectativasDaSerie.length === 0 ? (
             <section className="empty-area-expectativas">
