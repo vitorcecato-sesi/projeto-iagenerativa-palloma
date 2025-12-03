@@ -1,4 +1,4 @@
-// ...existing code...
+import { Link } from "react-router-dom";
 import "./styles/Home.css";
 import quadradoHome from "../assets/quadradoHome.png";
 
@@ -6,6 +6,11 @@ export default function Home() {
   return (
     <>
     <section className="siteTodo">
+
+      <section className="blocosNavbarHome"> 
+        <Link className="blocoLoginNavbarHome" to="/login"> Login </Link>
+      </section>
+
       <section className="blocoPrincipalHome">
         <section>
           <h1 className="tituloHome">
