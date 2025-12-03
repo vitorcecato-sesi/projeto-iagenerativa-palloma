@@ -1,63 +1,121 @@
-import React, { useState } from "react";
+// ...existing code...
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./styles/Expectativas.css";
+import Navbar from "../components/Navbar.jsx";
+import Footer from "../components/Footer.jsx";
+
+import { 
+    expectativas6,
+    expectativas7,
+    expectativas8,
+    expectativas9,
+    expectativas1EM,
+    expectativas2EM,
+    expectativas3EM,
+} from "../dadosExpectativas";
+
+// Mapeamento local dos dados importados para a seleção
+const dadosExpectativasMap = {
+    "6º ano": expectativas6 || [],
+    "7º ano": expectativas7 || [],
+    "8º ano": expectativas8 || [],
+    "9º ano": expectativas9 || [],
+    "1º ano Ensino Médio": expectativas1EM || [],
+    "2º ano Ensino Médio": expectativas2EM || [],
+    "3º ano Ensino Médio": expectativas3EM || [],
+};
+
+// Card de expectativa
+const ExpectativaCard = ({ expectativa }) => (
+  <section className="expectativa-item-expectativas">
+    <h4>
+      <span className="codigo-bncc-expectativas">{expectativa.codigo || "N/A"}</span>
+      <span className="pratica-area-expectativas"> - {expectativa.praticas || "Prática Indefinida"}</span>
+    </h4>
+    <p className="habilidade-text-expectativas">
+      <strong>Habilidade:</strong> {expectativa.habilidades || "Sem descrição de habilidade."}
+    </p>
+    <p className="objetivo-text-expectativas">
+      <strong>Objetivos:</strong> {Array.isArray(expectativa.objetivos) ? expectativa.objetivos.join(", ") : expectativa.objetivos || "N/A"}
+    </p>
+  </section>
+);
 
 export default function Expectativas() {
+  const navigate = useNavigate();
+
+  // iniciar sem série selecionada para obrigar escolha do usuário
   const [serie, setSerie] = useState("");
+  const seriesDisponiveis = Object.keys(dadosExpectativasMap);
+  const expectativasDaSerie = serie ? (dadosExpectativasMap[serie] || []) : [];
+
+  useEffect(() => {
+    console.log("Série selecionada:", serie);
+    console.log("Expectativas carregadas:", expectativasDaSerie);
+  }, [serie, expectativasDaSerie]);
 
   return (
-    <div className="page-container">
+    <section className="page-container-expectativas">
+      <Navbar />
 
-      {/* SHAPES DECORATIVAS */}
-      <div className="shape circle yellow"></div>
-      <div className="shape circle blue"></div>
-      <div className="shape square green"></div>
-      <div className="shape circle small-red"></div>
+      {/* Shapes decorativas */}
+      <section className="shape-expectativas circle-expectativas yellow-top-expectativas" />
+      <section className="shape-expectativas circle-expectativas blue-top-right-expectativas" />
+      <section className="shape-expectativas green-middle-expectativas" />
+      <section className="shape-expectativas circle-expectativas small-red-middle-expectativas" />
+      <section className="shape-expectativas circle-expectativas large-yellow-bottom-expectativas" />
 
-      {/* HEADER */}
-        <h1 className="title">
-          Veja a lista de <br /> expectativas
-        </h1>
+      <section className="content-wrapper-expectativas">
+        <section className="expectativas-header-expectativas">
+          <h1 className="hero-title-expectativas">Veja a lista de<br/>expectativas</h1>
+        </section>
 
-      {/* SEÇÃO DE SELEÇÃO */}
-      <section className="selector-section">
-        <label>Selecione a série/ano: </label>
-        <br/>
-        <br/>
-        <select
-          value={serie}
-          onChange={(e) => setSerie(e.target.value)}
-        >
-          <option value="">Selecione</option>
-          <option>6º Ano</option>
-          <option>1º Ano EM</option>
-          <option>2º Ano EM</option>
-          <option>3º Ano EM</option>
-        </select>
+        <section className="selector-section-expectativas">
+          <label htmlFor="select-serie-expectativas">Selecione a Série / Ano:</label>
+          <br />
+          <select
+            id="select-serie-expectativas"
+            value={serie}
+            onChange={(e) => setSerie(e.target.value)}
+          >
+            <option value=""> Selecione</option>
+            {seriesDisponiveis.map((s) => (
+              <option key={s} value={s}>{s}</option>
+            ))}
+          </select>
+        </section>
+
+        <section className="expectativas-card-wrapper-expectativas">
+          <h2 className="card-title-expectativas">Expectativas - {serie || "(nenhuma selecionada)"}</h2>
+
+          {serie === "" ? (
+            <section className="empty-area-expectativas">
+              <section className="icon-placeholder-expectativas">
+                <i className="fa-solid fa-hand-point-up" aria-hidden="true"></i>
+              </section>
+              <p className="empty-text-bold-expectativas">Selecione uma Série / Ano acima para ver as expectativas.</p>
+              <span className="empty-text-small-expectativas">Escolha a Série e a lista aparecerá aqui.</span>
+            </section>
+          ) : expectativasDaSerie.length === 0 ? (
+            <section className="empty-area-expectativas">
+              <section className="icon-placeholder-expectativas">
+                <i className="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+              </section>
+              <p className="empty-text-bold-expectativas">Não há expectativas cadastradas para o {serie}.</p>
+              <span className="empty-text-small-expectativas">Verifique o arquivo de dados ou selecione outra série.</span>
+            </section>
+          ) : (
+            <section className="expectativas-list-expectativas">
+              {expectativasDaSerie.map((exp, idx) => (
+                <ExpectativaCard key={idx} expectativa={exp} />
+              ))}
+            </section>
+          )}
+        </section>
+
+        <Footer />
       </section>
-
-      {/* CARD DE EXPECTATIVAS */}
-      <section className="card">
-        <h2>Expectativas</h2>
-
-        {serie === "" ? (
-          <div className="empty-area">
-            <div className="icon-placeholder">✨</div>
-            <p>Suas expectativas apareceram aqui</p>
-            <span>Selecione a série</span>
-          </div>
-        ) : (
-          <div className="list">
-            <p>✔ Expectativas da série selecionada</p>
-          </div>
-        )}
-      </section>
-
-      {/* FOOTER */}
-      <footer className="footer">
-        <img className="footer-icon" src="https://i.imgur.com/4AiXzf8.png" alt="icone" />
-        <p>Grupo 3<br />Todos os Direitos Reservados</p>
-        <span>2025</span>
-      </footer>
-    </div>
+    </section>
   );
 }
