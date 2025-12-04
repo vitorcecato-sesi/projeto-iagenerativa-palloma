@@ -15,6 +15,7 @@
 .rights {
   text-align: center;
   font-size: 14px;
+  z-index: 1;
 }
 
 .year {
@@ -36,6 +37,7 @@
     height: 130px;
     background-color: #ADECFF; /* Azul cornflower */
     left: 250px;
+    z-index: 0;
 }
 
 /* Círculo Amarelo Inferior Esquerdo */

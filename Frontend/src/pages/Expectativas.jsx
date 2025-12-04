@@ -56,7 +56,7 @@ export default function Expectativas() {
       setApiError(null);
       setExpectativasDaSerie([]);
 
-      const API_KEY = "AIzaSyCU8AHdMCQH0v6qV7CO0bMAL_M2WowH4wY";
+      const API_KEY = import.meta.env.VITE_GEMINI_KEY;
       const MODEL = "gemini-2.5-flash";
 
       // Prompt: instruções claras para o modelo. IMPORTANTE: pedimos

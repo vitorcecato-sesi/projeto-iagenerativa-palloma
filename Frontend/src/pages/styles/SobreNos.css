@@ -1,0 +1,226 @@
+/* =========================================
+    PÁGINA SOBRE NÓS (NOVOS ESTILOS)
+========================================= */
+
+/* --- NOVAS FORMAS GEOMÉTRICAS PARA O SOBRE NÓS --- */
+
+/* base para shapes decorativos */
+.shape {
+    position: absolute;
+    pointer-events: none;
+}
+
+/* Círculo Azul Grande (Topo Esquerdo - Fundo do título) */
+.sobre-nos-retangulo-verde {
+    width: 500px;
+    height: 650px;
+    background-color: #9AFFB4; /* Azul mais claro para destacar o título */
+    top: -200px;
+    left: -200px;
+    opacity: 1;
+}
+
+/* Círculo Amarelo (Topo, atrás do título) */
+.sobre-nos-circle-yellow-top {
+    width: 400px;
+    height: 300px;
+    background-color: #FFF69D;
+    border-radius: 50%;
+    top: -200px;
+    left: 200px;
+}
+
+/* Bolinha Vermelha Pequena (Topo) */
+.sobre-nos-circle-red-small-top {
+    width: 150px;
+    height: 150px;
+    background-color: #FF7171;
+    border-radius: 50%;
+    top: 320px;
+    right: 30px;
+    z-index: 1;
+}
+
+/* Círculo Azul Claro (Lado Direito, atrás da foto) */
+.sobre-nos-circle-lightblue-right {
+    width: 500px;
+    height: 500px;
+    background-color: #ADECFF; 
+    border-radius: 50%;
+    top: 100px;
+    right: 30%;
+}
+
+/* Círculo Vermelho Grande (Lado Esquerdo, perto do texto) */
+.sobre-nos-circle-red-left {
+    width: 150px;
+    height: 150px;
+    background-color: #FF7171;
+    border-radius: 50%;
+    top: 775px;
+    left: 15px;
+}
+
+
+/* --- LAYOUT DO CONTEÚDO --- */
+
+.sobre-nos-content {
+    padding-left: 10px;
+    margin-top: -50px;
+}
+
+/* Título Principal */
+.sobre-nos-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 200px; 
+    line-height: 1;
+    color: #3e1e04; 
+    margin-bottom: 40px;
+    
+    /* === EFEITO DE ENGROSSAMENTO === */
+    text-shadow: 
+        5px 1px 0px #3e1e04, /* Deslocamento 1 */
+        -1px -1px 0px #3e1e04, /* Deslocamento 2 */
+        5px -1px 0px #3e1e04, /* Deslocamento 3 */
+        -1px 1px 0px #3e1e04; /* Deslocamento 4 */
+    /* Isso cria um contorno completo, fazendo a letra parecer mais robusta. */
+}
+
+/* Seção de Texto e Imagem */
+.about-us-hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    margin-top: 100px;
+}
+
+.about-text-column {
+    flex: 1;
+    background-color: #6697ED; /* Cor de fundo suave para o texto */
+    padding: 25px;
+    border-radius: 15px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    font-size: 0.7em;
+}
+
+.sobre-nos-paragraph {
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: justify;
+    font-family: 'nunito', sans-serif;
+    z-index: -1;
+}
+
+/* Garante o negrito no texto */
+.sobre-nos-paragraph strong {
+    font-weight: 700;
+    color: #000;
+}
+
+.about-image-column {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* para permitir sobreposição absoluta/relativa da imagem */
+}
+
+.group-photo {
+    width: 33em;
+    height: auto;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 3; /* sobre o círculo decorativo */
+    /* ajuste fino para posicionar a foto por cima do círculo vermelho */
+}
+
+/* --- Seção de Integrantes --- */
+
+.integrantes-section {
+    margin-top: 80px;
+    margin-bottom: 50px;
+    padding: 0 40px;
+}
+
+.integrantes-title {
+    font-size: 1.8rem;
+    font-weight: 1000;
+    color: #6697ED;
+    margin-bottom: 30px;
+    font-family: 'nunito', sans-serif;
+}
+
+.integrantes-grid {
+    display: grid;
+    /* 3 colunas em telas maiores */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 40px 60px;
+    padding: 0 50px;
+}
+
+/* imagem do integrante (ou img dentro do card) -- reduz tamanho e mantém proporção */
+.integrante-photo,
+.integrante-card img,
+.integrante-placeholder-image {
+    width: 220px;       /* tamanho reduzido */
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin: 0 auto 15px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+.integrante-card {
+    text-align: center;
+}
+
+.integrante-name {
+    font-size: 1.5rem;
+    font-weight: 1000;
+    color: #ADECFF; /* Azul cornflower do seu design original */
+}
+
+/* Media queries organizadas em ordem decrescente de largura */
+
+@media (max-width: 361px) {
+     .sobre-nos-title{
+        font-size: 7em;
+     }
+
+     .about-us-hero-section{
+        flex-direction: column;
+     }
+
+     .about-text-column{
+     width: 26em;
+     z-index: 3;
+     }
+
+     .sobre-nos-paragraph{
+        font-size: 1.5em;
+     }
+
+     .group-photo{
+        width: 16em;
+     }
+
+     .integrantes-title{
+        font-size: 1.5em;
+        width: 40em;
+        margin-left: -2em;
+     }
+
+     .integrantes-grid{
+        grid-template-columns: 1fr;
+        gap: 20px 0px;
+        padding: 0 20px;
+        margin-left: -3.3em;
+     }
+
+
+       
+}
