@@ -1,0 +1,82 @@
+.simple-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  margin-top: 40px;
+  margin-bottom: -100px;
+}
+
+.logo-placeholder img {
+  height: 80px;
+  width: auto;
+}
+
+.rights {
+  text-align: center;
+  font-size: 14px;
+}
+
+.year {
+  font-size: 14px;
+  z-index: 1;
+}
+
+/* =========================================
+   FORMAS GEOMÉTRICAS (SHAPES)
+========================================= */
+.shape-footer {
+    position: absolute;
+    z-index: 0;
+}
+
+/* Círculo Azul Superior Esquerdo (Fundo do título) */
+.circle-blue-top-left-footer {
+    width: 300px;
+    height: 130px;
+    background-color: #ADECFF; /* Azul cornflower */
+    left: 250px;
+}
+
+/* Círculo Amarelo Inferior Esquerdo */
+.circle-yellow-bottom-left-footer {
+    width: 130px;
+    height: 130px;
+    background-color: #fff59d;
+    border-radius: 50%;
+    right: -90px;
+    z-index: 0;
+}
+
+/* ==============================
+   MEDIA QUERY PARA 768px OU MENOS
+   Ajustes do footer em celulares pequenos
+   ============================== */
+@media (max-width: 768px) {
+  .simple-footer {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    padding: 14px 18px;
+    margin-bottom: 0;
+  }
+
+  .logo-placeholder img {
+    height: 56px;
+  }
+
+  .rights {
+    font-size: 12px;
+  }
+
+  .year {
+    font-size: 12px;
+  }
+
+  /* esconder formas que conflitam no mobile ou reposicionar */
+  .shape-footer,
+  .circle-blue-top-left-footer,
+  .circle-yellow-bottom-left-footer {
+    display: none;
+  }
+}
