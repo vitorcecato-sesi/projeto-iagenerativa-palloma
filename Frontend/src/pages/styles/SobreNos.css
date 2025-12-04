@@ -100,8 +100,9 @@
     background-color: #6697ED; /* Cor de fundo suave para o texto */
     padding: 25px;
     border-radius: 15px;
-    max-width: 10000px;
+    width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    font-size: 0.7em;
 }
 
 .sobre-nos-paragraph {
@@ -127,8 +128,7 @@
 }
 
 .group-photo {
-    width: 100%;
-    max-width: 700px; /* Limite o tamanho da imagem */
+    width: 33em;
     height: auto;
     border-radius: 15px;
     object-fit: cover;
@@ -136,7 +136,6 @@
     position: relative;
     z-index: 3; /* sobre o círculo decorativo */
     /* ajuste fino para posicionar a foto por cima do círculo vermelho */
-    transform: translate(30px, -40px);
 }
 
 /* --- Seção de Integrantes --- */
@@ -185,146 +184,43 @@
     color: #ADECFF; /* Azul cornflower do seu design original */
 }
 
-@media (max-width: 2391px) {
-   .sobre-nos-paragraph {
-        font-size: 2.1em;
-    }
+/* Media queries organizadas em ordem decrescente de largura */
 
-    .group-photo {
-        width: 80%;
-        height: auto;
-}
+@media (max-width: 361px) {
+     .sobre-nos-title{
+        font-size: 7em;
+     }
 
-.integrantes-title{
-    font-size: 2.5rem;
-}
+     .about-us-hero-section{
+        flex-direction: column;
+     }
 
-.integrante-name{
-    font-size: 2rem;
-}
-}
+     .about-text-column{
+     width: 26em;
+     z-index: 3;
+     }
 
-@media (max-width: 1755px){
-    .group-photo{
-        width: 93%;
-        margin-top: 2.2em;
-    }
+     .sobre-nos-paragraph{
+        font-size: 1.5em;
+     }
 
-     .sobre-nos-title {
-        font-size: 8.5em;
-    }
+     .group-photo{
+        width: 16em;
+     }
 
-    .sobre-nos-paragraph{
-        font-size: 2em;
-    }
+     .integrantes-title{
+        font-size: 1.5em;
+        width: 40em;
+        margin-left: -2em;
+     }
 
-    .integrantes-section{
+     .integrantes-grid{
+        grid-template-columns: 1fr;
+        gap: 20px 0px;
         padding: 0 20px;
-    }
-
-    .integrantes-title{
-        font-size: 2.2rem;
-    }
-
-    .integrantes-section {
-        position: relative; /* container for absolute positioning */
-        padding-top: 30px; /* give some room so content doesn't overlap unexpectedly */
-    }
-
-    .integrantes-title {
-        position: absolute;
-        left: 15px; /* align with the circle's left position */
-        top: 95px; /* pull the title up so it sits on top of the circle */
-        z-index: 5; /* above the circle (circle z-index is 1) */
-        background: transparent;
-        margin: 0;
-        padding: 0 6px; /* small horizontal padding so text doesn't touch circle edges */
-        transform: translateY(0);
-    }
-
-    .integrantes-grid{
-        margin-top: 10em;
-    }
-
-}
+        margin-left: -3.3em;
+     }
 
 
-@media (max-width: 1270px) {
-    .sobre-nos-title {
-        font-size: 8.5em;
-    }
-
-    .sobre-nos-paragraph{
-        font-size: 20px;
-    }
-
-    .group-photo{
-        width: 90%;
-        margin-top: 4em;
-    }
-
-    .integrantes-section{
-        padding: 0 20px;
-    }
-
-    .integrantes-title{
-        font-size: 2.2rem;
-    }
-
-    .integrantes-section {
-        position: relative; /* container for absolute positioning */
-        padding-top: 30px; /* give some room so content doesn't overlap unexpectedly */
-    }
-
-    .integrantes-title {
-        position: absolute;
-        left: 15px; /* align with the circle's left position */
-        top: 95px; /* pull the title up so it sits on top of the circle */
-        z-index: 5; /* above the circle (circle z-index is 1) */
-        background: transparent;
-        margin: 0;
-        padding: 0 6px; /* small horizontal padding so text doesn't touch circle edges */
-        transform: translateY(0);
-    }
-
-    .integrantes-grid{
-        margin-top: 10em;
-    }
-
-
-}
-
-@media (max-width: 1205px) {
-    .about-us-hero-section {
-        gap: 30px;
-        margin-top: -0.3em;
-    }
-
-    .about-image-column,
-    .about-text-column {
-        max-width: 100%;
-    }
-
-    .group-photo {
-        transform: translate(0, 0); /* centraliza a imagem em telas menores */
-        width: 95%;
-        margin-top: -1em;
-    }
-}
-
-@media (max-width: 1110px) {
-    .about-us-hero-section{
-        margin-top: 3em;
-    }
-
-    .about-text-column {
-        padding: 20px;
-        margin-bottom: 2em;
-    }
-
-    /* reposicionar a bolinha vermelha para baixo do bloco azul */
-    .sobre-nos-circle-red-small-top {
-        top: 500px; /* move para baixo */
-        right: 40px; /* ajusta posição horizontal */
-    }
+       
 }
