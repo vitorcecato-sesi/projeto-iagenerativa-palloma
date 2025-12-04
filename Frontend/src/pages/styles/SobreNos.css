@@ -105,6 +105,16 @@
     font-size: 0.7em;
 }
 
+.about-text-column2 {
+    flex: 1;
+    background-color: #6697ED; /* Cor de fundo suave para o texto */
+    padding: 25px;
+    border-radius: 15px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    font-size: 0.7em;
+}
+
 .sobre-nos-paragraph {
     font-size: 20px;
     line-height: 1.6;
@@ -166,8 +176,8 @@
 .integrante-photo,
 .integrante-card img,
 .integrante-placeholder-image {
-    width: 220px;       /* tamanho reduzido */
-    height: 300px;
+    width: 200px;       /* tamanho reduzido */
+    height: 280px;
     object-fit: cover;
     border-radius: 5px;
     margin: 0 auto 15px;
@@ -189,6 +199,7 @@
 @media (max-width: 361px) {
      .sobre-nos-title{
         font-size: 7em;
+        margin-left: -0.3em;
      }
 
      .about-us-hero-section{
@@ -200,12 +211,17 @@
      z-index: 3;
      }
 
+     .about-text-column2{
+        width: 26em;
+        margin-left: -3em;
+     }
+
      .sobre-nos-paragraph{
         font-size: 1.5em;
      }
 
      .group-photo{
-        width: 16em;
+        width: 18em;
      }
 
      .integrantes-title{
@@ -219,6 +235,14 @@
         gap: 20px 0px;
         padding: 0 20px;
         margin-left: -3.3em;
+     }
+
+     .integrante-photo{
+        width: 2em;
+     }
+
+     .integrantes-section{
+        margin-left: 0.3em;
      }
 
 
