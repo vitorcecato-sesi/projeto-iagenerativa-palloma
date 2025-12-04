@@ -29,3 +29,31 @@
     font-weight: 700;
 
 }
+
+/* Ajustes responsivos para telas pequenas (<=768px) */
+@media (max-width: 768px) {
+
+    .navbar{
+        justify-content: flex-end;
+        margin-top: 0;
+        margin-right: 1px;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+    }
+
+    .blocoLoginNavbar{
+        width: 52px;
+        height: 52px;
+        font-size: 0.85rem;
+        display: inline-block;
+    }
+
+    .blocoSobreNavbar{
+        width: 52px;
+        height: 52px;
+        font-size: 0.85rem;
+        border-radius: 50%; /* garante que seja um círculo */
+        display: inline-block;
+    }
+}

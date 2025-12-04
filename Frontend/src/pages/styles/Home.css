@@ -1,0 +1,177 @@
+/* Importando As Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Serif+Text:ital@0;1&family=Gloock&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Serif+Text:ital@0;1&family=Gloock&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+.blocosNavbarHome{
+   display: flex;
+   justify-content: flex-end;
+}
+
+.blocoLoginNavbarHome{
+    background-color: #FD66A7;
+    width: 10vh;
+    height: 10vh;
+    text-decoration: none; 
+    color: #491900;
+    align-content: center;
+    text-align: center;
+    font-weight: 700;
+
+}
+
+.tituloHome{
+    font-family: "Anton", sans-serif;
+    font-size: 200px;       
+    color: #491900;         
+    line-height: 1; /* linhas mais próximas */
+    padding-left: 20px;
+}
+
+.blocoPrincipalHome {
+    display: flex;
+    flex-direction: row;
+    margin-top: -5em;
+}
+
+.siteTodo {
+    min-height: 100vh;
+}
+
+.quadradoHome{
+     width: 3vw;
+}
+
+.blocoTexto{
+    padding-top: 18em;
+    padding-left: 15em;
+    font-size: 1.20em;
+}
+
+.textoHome{
+    font-family: "Nunito", sans-serif;
+    color: #491900;
+    font-weight: 600;
+}
+
+.blocosHome{
+    display: flex;
+    flex-direction: row;
+    gap: 6em;
+    padding-left: 4em;
+    padding-top: 4em;
+}
+
+/* substitua por */
+.home-shape {
+    position: inherit;
+}
+
+.blocoAzulHome{
+    width: 5.5vw;
+    height: 5vw;
+    background-color: #6697ED;
+}
+
+
+@media screen and (max-width: 1330px) {
+    .blocoTexto{
+        margin-left: -6em;
+    }
+
+    .blocoAzulHome{
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media screen and (max-width: 1094px) {
+    .tituloHome{
+        font-size: 150px;
+        margin-top: 22px;
+    }
+
+    .blocosHome{
+        gap: 4em;
+    }
+
+    .blocoAzulHome{
+        width: 200px;
+        height: 60px;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .tituloHome{
+        font-size: 145px;
+    }
+    
+    .blocoTexto{
+        margin-left: -11em;
+    }
+}
+
+@media screen and (max-width: 855px) {
+    .tituloHome{
+        font-size: 125px;
+    }
+
+    .blocoTexto{
+        margin-top: -4em;
+    }
+
+    .blocosHome{
+        gap: 2.5em;
+    }
+
+    .blocoAzulHome{
+        width: 100px;
+        height: 55px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .tituloHome{
+        font-size: 110px;
+    }
+
+    .blocoTexto{
+        margin-top: -6em;
+    }
+
+    .blocosHome{
+        gap: 2.5em;
+    }
+}
+
+@media screen and (max-width: 690px) {
+    .blocoPrincipalHome{
+        flex-direction: column;
+    }
+
+    .tituloHome{
+        font-size: 100px;
+    }
+
+    .blocoTexto{
+        padding-top: 8em;
+    }
+
+    .blocosHome{
+        gap: 2.2em;
+    }
+
+    .blocoAzulHome{
+        height: 50px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .blocosHome{
+        gap: 1.5em;
+        padding-left: 1em;
+    }
+
+    .blocoAzulHome{
+        height: 40px;
+    }
+}
