@@ -21,11 +21,11 @@
 
 ## 📖 Sobre o Projeto
 
-O **Teacher Up & Assistent** é uma aplicação web Full Stack desenvolvida pelo **Grupo 3** do curso de Desenvolvimento de Sistemas do SENAI[cite: 5, 88].
+O **Teacher Up & Assistent** é uma aplicação web Full Stack desenvolvida pelo **Grupo 3** do curso de Desenvolvimento de Sistemas do SENAI.
 
-O objetivo principal deste projeto é auxiliar a professora **Palloma Favarão** (Língua Portuguesa) na criação ágil e criativa de planos de aula[cite: 1, 13]. [cite_start]A solução utiliza a API do **Google Gemini** para sugerir metodologias, recursos didáticos e avaliações personalizadas, focando especialmente em atrair a atenção de turmas do 6º ano e Ensino Médio[cite: 13, 88].
+O objetivo principal deste projeto é auxiliar a professora **Palloma Favarão** (Língua Portuguesa) na criação ágil e criativa de planos de aula. A solução utiliza a API do **Google Gemini** para sugerir metodologias, recursos didáticos e avaliações personalizadas, focando especialmente em atrair a atenção de turmas do 6º ano e Ensino Médio.
 
-> "Nós somos uma página para ajudar você em seus planejamentos de aulas." [cite: 38]
+> "Nós somos uma página para ajudar você em seus planejamentos de aulas."
 
 ---
 
@@ -34,20 +34,20 @@ O objetivo principal deste projeto é auxiliar a professora **Palloma Favarão**
 A aplicação foi projetada com foco na usabilidade e na integração inteligente:
 
 * **🤖 Integração com IA Generativa (Gemini):**
-    * Criação automática de planos de aula baseados em: Tema, Série/Ano e Observações[cite: 22, 66].
-    * Geração de tabelas detalhadas com metodologia, recursos e avaliação[cite: 24].
+    * Criação automática de planos de aula baseados em: Tema, Série/Ano e Observações.
+    * Geração de tabelas detalhadas com metodologia, recursos e avaliação.
     * Engenharia de Prompt configurada no Back-End para atuar como um "Especialista" pedagógico.
 
 * **📚 Consulta à BNCC:**
-    * Página dedicada para consultar as expectativas de aprendizado (BNCC) por série[cite: 16, 25].
-    * Visualização clara dos códigos e descrições das competências[cite: 21].
+    * Página dedicada para consultar as expectativas de aprendizado (BNCC) por série.
+    * Visualização clara dos códigos e descrições das competências.
 
 * **📄 Exportação de Documentos:**
-    * Funcionalidade para gerar e baixar o planejamento completo em formato **PDF**[cite: 24, 29].
-    * Botão de cópia rápida para facilitar a transferência de texto[cite: 23].
+    * Funcionalidade para gerar e baixar o planejamento completo em formato **PDF**.
+    * Botão de cópia rápida para facilitar a transferência de texto.
 
 * **📱 Design Responsivo:**
-    * Interface adaptada, focada na usabilidade em dispositivos móveis (ex: Galaxy M13) e desktops[cite: 20].
+    * Interface adaptada, focada na usabilidade em dispositivos móveis (ex: Galaxy M13) e desktops.
 
 ---
 
