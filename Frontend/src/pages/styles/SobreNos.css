@@ -100,7 +100,7 @@
     background-color: #6697ED; /* Cor de fundo suave para o texto */
     padding: 25px;
     border-radius: 15px;
-    width: 80%;
+    width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     font-size: 0.7em;
 }
