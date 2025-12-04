@@ -2,6 +2,10 @@
     PÁGINA SOBRE NÓS (NOVOS ESTILOS)
 ========================================= */
 
+.sobre-navbar {
+    z-index: 2;
+}
+
 .sobre-nos-page {
     position: relative;
     width: 100%;
@@ -205,97 +209,217 @@
 
 /* Media queries organizadas em ordem decrescente de largura */
 
-@media (max-width: 420px)  {
-    .sobre-nos-title {
-        font-size: 120px;
-        margin-left: -20px;
-    }
+@media (max-width: 1001px) {
+   .about-us-hero-section{
+    flex-direction: column;
+   }
 
-    .about-us-hero-section {
-        flex-direction: column;
-    }
+   .about-text-column{
+    width: 70em;
+    margin-bottom: 30px;
+    z-index: 3;
+   }
 
-    .about-text-column {
-        width: 28em;
-        margin-bottom: 30px;
-        z-index: 3;
-        margin-left: -1.5em;
-    }
+   .about-text-column2{
+    width: 70em;
+    margin-bottom: 30px;
+    margin-left: 3em;
+   }
 
-    .about-text-column2 {
-        width: 28em;
-        margin-left: -1.5em;
-        margin-bottom: 30px;
-    }
 
-    .sobre-nos-paragraph {
-        font-size: 18px;
-    }
-
-    .group-photo {
-        width: 105%;
-        margin-left: -1.5em;
-    }
-
-    .integrantes-title {
-        font-size: 1.5rem;
-        text-align: center;
-    }
-
-    .integrantes-grid {
-        grid-template-columns: 1fr;
-        gap: 30px 40px;
-        padding: 0 20px;
-        margin-left: -0.8em;
-    }
 }
 
-@media (max-width: 821px) and (min-width: 818px){
+@media (max-width: 865px) {
+
     .sobre-nos-title {
+        font-size: 200px; /* Reduzido para telas menores */
+        width: 50%;
+        margin-bottom: -0.2em;
+    }
+   .integrantes-grid {
+    grid-template-columns: repeat(2, 1fr); 
+   }
+
+   .about-text-column2{
+    margin-left: 0; 
+   }
+}
+
+@media (max-width: 805px) {
+   .about-text-column{
+    width: 60em;
+   }
+
+   .about-text-column2{
+    width: 60em; 
+    margin-left: 2.4em;
+   }
+}
+
+@media (max-width: 705px) {
+   .sobre-nos-title {
+    font-size: 120px; /* Reduzido para telas menores */
+   }
+
+   .about-us-hero-section {
+    flex-direction: column;
+    align-items: center;
+   }
+
+   .about-text-column {
+    width: 90%;
+    margin-bottom: 20px;
+   }
+
+   .about-text-column2{
+     width: 90%;
+   }
+
+}
+
+@media (max-width: 660px) {
+
+    .sobre-nos-title{
+        font-size: 180px;
+    }
+  
+   .integrantes-grid {
+    grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
+   }
+
+   .group-photo {
+    width: 85%; /* Ajusta a foto do grupo para ocupar toda a largura */
+    max-width: 500px; /* Limita a largura máxima */
+   }
+}
+
+@media (max-width: 500px){
+
+    .sobre-nos-title{
         font-size: 150px;
-        margin-left: -10px;
+    }
+    .integrantes-section{
+        margin-left: -1.5em;
+    }
+     .sobre-nos-paragraph{
+        font-size: 1.2rem;
     }
 
-    .about-us-hero-section {
-        flex-direction: column;
+    .about-text-column{
+        width: 35em;
     }
 
-    .about-text-column {
-        width: 58em;
-        margin-bottom: 30px;
-        z-index: 3;
+    .group-photo{
+        width: 400px;
     }
 
-    .about-text-column2 {
-        width: 58em;
-        margin-bottom: 30px;
-        margin-left: 3em;
+    .about-text-column2{
+        width: 35em;
+        margin-left: 0.9em;
     }
 
-    .sobre-nos-paragraph {
-        font-size: 18px;
-    }
-
-    .group-photo {
-        width: 80%;
-    }
-
-    .integrantes-title {
-        font-size: 1.6rem;
-        text-align: center;
-    }
-
-    .integrantes-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px 40px;
-        padding: 0 30px;
+    .integrantes-title{
+        font-size: 20px;
     }
 }
 
-@media (max-width:1026px){
-.about-text-column{
-    width: 45em;
+
+
+@media (max-width: 370px) {
+
+    .sobre-nos-title {
+        font-size: 110px; /* Reduzido para telas muito pequenas */
+        margin-bottom: -20px; /* Ajusta o espaçamento */
+    }
+    .sobre-nos-paragraph{
+        font-size: 0.8rem;
+    }
+
+    .about-text-column{
+        width: 26em;
+    }
+
+    .about-text-column2{
+        width: 26em;
+      margin-left: 0.01em;
+    }
+
+    .integrantes-title{
+        font-size: 20px;
+    }
+
+   .group-photo {
+    width: 100%; /* Ajusta a foto do grupo para ocupar toda a largura */
+    max-width: 100%; /* Limita a largura máxima */
+   }
+
+   .integrantes-title{
+    width: 80em;
+    margin-left: -2em;
+   }
+
+   .integrantes-grid{
+    margin-left: -2em;
+   }
 }
+
+@media (max-width: 350px) {
+    .integrantes-section{
+        margin-left: -1em;
+    }
+
+     .sobre-nos-paragraph{
+        font-size: 0.8rem;
+    }
+
+    .about-text-column{
+        width: 24em;
+    }
+
+    .group-photo{
+        width: 400px;
+    }
+
+    .about-text-column2{
+        width: 24em;
+        margin-left: -2em;
+    }
+
+    .integrantes-title{
+        font-size: 20px;
+    }
+
 
 }
 
+@media (max-width: 321px){
+
+    .sobre-nos-title{
+        margin-top: 0.2em;
+        font-size: 100px;
+    }
+    .sobre-nos-paragraph{
+        font-size: 0.8rem;
+    }
+
+    .about-text-column{
+        width: 24em;
+    }
+
+    .group-photo{
+        width: 400px;
+    }
+
+    .about-text-column2{
+        width: 24em;
+        margin-left: -2em;
+    }
+
+    .integrantes-title{
+        font-size: 20px;
+    }
+
+    .integrante-photo{
+        min-width: 5vw;
+    }
+}
