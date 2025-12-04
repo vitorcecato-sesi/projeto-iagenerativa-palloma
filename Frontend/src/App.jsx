@@ -2,10 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import './App.css'
 
-import Login from './pages/Login.jsx'
-import AssistenteIA from './pages/AssistenteIA.jsx'
 import Expectativas from './pages/Expectativas.jsx'
-import SobreNos from './pages/SobreNos.jsx'
 
 function App() {
 
@@ -13,10 +10,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/login' element={<Login />} />
-          <Route path='/home' element={<AssistenteIA />} />
-          <Route path='/expectativas' element={<Expectativas />} />
-          <Route path='/sobrenos' element={<SobreNos />} />
+          <Route path='/' element={<Expectativas />} />
         </Routes>
       </BrowserRouter>
     </>

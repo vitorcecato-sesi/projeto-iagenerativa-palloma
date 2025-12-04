@@ -3,24 +3,24 @@ import "./styles/Expectativas.css";
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 
-// Agora as expectativas serão carregadas via API generativa (Gemini)
-
-// Card de expectativa
-const ExpectativaCard = ({ expectativa }) => (
-  <section className="expectativa-item-expectativas">
+// Recebe um objeto `expectativa` e renderiza seus campos.
+const CartaoExpectativa = ({ expectativa }) => (
+  <section className="item-expectativa">
     <h4>
-      <span className="codigo-bncc-expectativas">{expectativa.codigo || "N/A"}</span>
-      <span className="pratica-area-expectativas"> - {expectativa.praticas || "Prática Indefinida"}</span>
+      <span className="codigo-bncc">{expectativa.codigo || "N/A"}</span>
+      <span className="area-pratica"> - {expectativa.praticas || "Prática Indefinida"}</span>
     </h4>
-    <p className="habilidade-text-expectativas">
+    <p className="texto-habilidade">
       <strong>Habilidade:</strong> {expectativa.habilidades || "Sem descrição de habilidade."}
     </p>
-    <p className="objetivo-text-expectativas">
+    <p className="texto-objetivo">
       <strong>Objetivos:</strong> {Array.isArray(expectativa.objetivos) ? expectativa.objetivos.join(", ") : expectativa.objetivos || "N/A"}
     </p>
   </section>
 );
 
+// Componente de página: Expectativas
+// Gerencia seleção de série, chama a API e renderiza os cartões.
 export default function Expectativas() {
 
   // iniciar sem série selecionada para obrigar escolha do usuário
@@ -29,6 +29,7 @@ export default function Expectativas() {
   const [loadingApi, setLoadingApi] = useState(false);
   const [apiError, setApiError] = useState(null);
 
+  // Lista de séries/anos disponíveis para seleção.
   const seriesDisponiveis = [
     "6º ano",
     "7º ano",
@@ -44,8 +45,12 @@ export default function Expectativas() {
       setExpectativasDaSerie([]);
       return;
     }
-
-    // quando a série mudar, buscar via API
+    // Quando a série mudar, buscamos as expectativas correspondentes
+    // via API generativa (Gemini). O fluxo é:
+    // 1) Montar um prompt claro apontando para o PDF da BNCC
+    // 2) Pedir que o modelo retorne SOMENTE um JSON (array de objetos)
+    // 3) Extrair o primeiro bloco JSON recebido e tentar fazer JSON.parse
+    // 4) Em caso de erro, registrar a mensagem em `apiError` para exibir ao usuário
     const fetchExpectativas = async (serieSelecionada) => {
       setLoadingApi(true);
       setApiError(null);
@@ -54,6 +59,9 @@ export default function Expectativas() {
       const API_KEY = "AIzaSyCU8AHdMCQH0v6qV7CO0bMAL_M2WowH4wY";
       const MODEL = "gemini-2.5-flash";
 
+      // Prompt: instruções claras para o modelo. IMPORTANTE: pedimos
+      // explicitamente que retorne apenas um JSON válido. O link da
+      // BNCC está incluído para referência.
       const prompt = `Você é um assistente que extrai, a partir do documento da BNCC (link abaixo), as EXPECTATIVAS/objetivos de aprendizagem correspondentes à série informada. Retorne SOMENTE um JSON válido — um array de objetos — onde cada objeto possui as chaves: "codigo", "praticas", "habilidades", "objetivos" (objetivos pode ser um array de strings ou uma string). NÃO inclua texto adicional fora do JSON. Use o link como fonte:
 https://www.alex.pro.br/BNCC%20L%C3%ADngua%20Portuguesa.pdf
 
@@ -84,7 +92,10 @@ Exemplo de saída esperada (JSON):
         const data = await resp.json();
         const raw = data?.candidates?.[0]?.content?.parts?.[0]?.text || "";
 
-        // tentar extrair JSON do texto retornado
+        // Estratégia de parsing:
+        // O modelo às vezes inclui texto explicativo antes ou depois do JSON.
+        // Aqui tentamos localizar o primeiro bloco que pareça um array JSON
+        // (inicia com '[' e termina com ']') e parseá-lo.
         const match = raw.match(/(\[([\s\S]*)\])/);
         if (match && match[1]) {
           try {
@@ -95,7 +106,7 @@ Exemplo de saída esperada (JSON):
               setApiError("Resposta não é um array JSON válido.");
             }
           } catch (err) {
-            console.error(err);
+            console.error('Erro ao parsear JSON da resposta da IA:', err);
             setApiError("Falha ao parsear JSON retornado pela API.");
           }
         } else {
@@ -113,22 +124,23 @@ Exemplo de saída esperada (JSON):
   }, [serie]);
 
   return (
-    <section className="page-container-expectativas">
+    <section className="container-pagina-expectativas">
       <Navbar />
 
-      {/* Shapes decorativas */}
-      <section className="shape-expectativas circle-expectativas yellow-top-expectativas" />
-      <section className="shape-expectativas circle-expectativas blue-top-right-expectativas" />
-      <section className="shape-expectativas green-middle-expectativas" />
-      <section className="shape-expectativas circle-expectativas small-red-middle-expectativas" />
-      <section className="shape-expectativas circle-expectativas large-yellow-bottom-expectativas" />
+      {/* Formas decorativas (floats atrás do conteúdo) */}
+      <section className="forma-decorativa forma-circulo forma-amarela-topo" />
+      <section className="forma-decorativa forma-circulo forma-azul-topo-direito" />
+      <section className="forma-decorativa forma-verde-meio" />
+      <section className="forma-decorativa forma-circulo forma-vermelha-pequena-meio" />
+      <section className="forma-decorativa forma-circulo forma-amarela-grande-inferior" />
 
-      <section className="content-wrapper-expectativas">
-        <section className="expectativas-header-expectativas">
-          <h1 className="hero-title-expectativas">Veja a lista de<br/>expectativas</h1>
+      <section className="conteudo-pagina-expectativas">
+        <section className="cabecalho-expectativas">
+          <h1 className="titulo-principal-expectativas">Veja a lista de<br/>expectativas</h1>
         </section>
 
-        <section className="selector-section-expectativas">
+        {/* Seletor de série/ano */}
+        <section className="seletor-serie-expectativas">
           <label htmlFor="select-serie-expectativas">Selecione a Série / Ano:</label>
           <br />
           <select
@@ -143,45 +155,46 @@ Exemplo de saída esperada (JSON):
           </select>
         </section>
 
-        <section className="expectativas-card-wrapper-expectativas">
-          <h2 className="card-title-expectativas">Expectativas - {serie || "(nenhuma selecionada)"}</h2>
+        {/* Área principal onde os cartões aparecem */}
+        <section className="area-cartoes-expectativas">
+          <h2 className="titulo-cartao-expectativas">Expectativas - {serie || "(nenhuma selecionada)"}</h2>
 
           {serie === "" ? (
-            <section className="empty-area-expectativas">
-              <section className="icon-placeholder-expectativas">
+            <section className="area-vazia-expectativas">
+              <section className="icone-placeholder-expectativas">
                 <i className="fa-solid fa-hand-point-up" aria-hidden="true"></i>
               </section>
-              <p className="empty-text-bold-expectativas">Selecione uma Série / Ano acima para ver as expectativas.</p>
-              <span className="empty-text-small-expectativas">Escolha a Série e a lista aparecerá aqui.</span>
+              <p className="texto-vazio-negrito-expectativas">Selecione uma Série / Ano acima para ver as expectativas.</p>
+              <span className="texto-vazio-pequeno-expectativas">Escolha a Série e a lista aparecerá aqui.</span>
             </section>
           ) : loadingApi ? (
-            <section className="empty-area-expectativas">
-              <section className="icon-placeholder-expectativas">
+            <section className="area-vazia-expectativas">
+              <section className="icone-placeholder-expectativas">
                 <i className="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
               </section>
-              <p className="empty-text-bold-expectativas">Buscando expectativas para {serie}...</p>
-              <span className="empty-text-small-expectativas">Aguarde enquanto consultamos a fonte BNCC.</span>
+              <p className="texto-vazio-negrito-expectativas">Buscando expectativas para {serie}...</p>
+              <span className="texto-vazio-pequeno-expectativas">Aguarde enquanto consultamos a fonte BNCC.</span>
             </section>
           ) : apiError ? (
-            <section className="empty-area-expectativas">
-              <section className="icon-placeholder-expectativas">
+            <section className="area-vazia-expectativas">
+              <section className="icone-placeholder-expectativas">
                 <i className="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
               </section>
-              <p className="empty-text-bold-expectativas">Erro: {apiError}</p>
-              <span className="empty-text-small-expectativas">Tente novamente ou verifique sua conexão/API.</span>
+              <p className="texto-vazio-negrito-expectativas">Erro: {apiError}</p>
+              <span className="texto-vazio-pequeno-expectativas">Tente novamente ou verifique sua conexão/API.</span>
             </section>
           ) : expectativasDaSerie.length === 0 ? (
-            <section className="empty-area-expectativas">
-              <section className="icon-placeholder-expectativas">
+            <section className="area-vazia-expectativas">
+              <section className="icone-placeholder-expectativas">
                 <i className="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
               </section>
-              <p className="empty-text-bold-expectativas">Não há expectativas cadastradas para o {serie}.</p>
-              <span className="empty-text-small-expectativas">Verifique o arquivo de dados ou selecione outra série.</span>
+              <p className="texto-vazio-negrito-expectativas">Não há expectativas cadastradas para o {serie}.</p>
+              <span className="texto-vazio-pequeno-expectativas">Verifique o arquivo de dados ou selecione outra série.</span>
             </section>
           ) : (
-            <section className="expectativas-list-expectativas">
+            <section className="lista-expectativas">
               {expectativasDaSerie.map((exp, idx) => (
-                <ExpectativaCard key={idx} expectativa={exp} />
+                <CartaoExpectativa key={idx} expectativa={exp} />
               ))}
             </section>
           )}

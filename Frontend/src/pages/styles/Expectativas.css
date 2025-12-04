@@ -24,38 +24,45 @@ body {
 /* =========================================
    CONTAINER PRINCIPAL
 ========================================= */
-.page-container-expectativas {
+.container-pagina-expectativas {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  /* MUDANÇA CRÍTICA AQUI: Permitir scroll vertical, esconder horizontal */
+  /* Permitir scroll vertical, esconder horizontal */
   overflow-x: hidden;
+  overflow-y: visible;
   padding: 40px;
+  padding-bottom: 0;
 }
 
 /* =========================================
    WRAPPER DE CONTEÚDO
 ========================================= */
-.content-wrapper-expectativas {
+.conteudo-pagina-expectativas {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 30px;
 }
 
 /* =========================================
    FORMAS GEOMÉTRICAS (SHAPES)
    Adaptando as formas do seu primeiro CSS com os nomes limpos
 ========================================= */
-.shape-expectativas {
+.forma-decorativa {
   position: absolute;
   z-index: 0;
-  /* Mantenha em 1 para ficar atrás do conteúdo, mas visível */
+  /* Formas decorativas posicionadas atrás do conteúdo */
+  border-radius: 50%;
+}
+
+/* Classe auxiliar: forma circular (aplicada junto com forma-decorativa) */
+.forma-circulo {
   border-radius: 50%;
 }
 
 /* Círculo Amarelo Topo Esquerdo */
-.yellow-top-expectativas {
+.forma-amarela-topo {
   width: 500px;
   height: 500px;
   background: #FFF69D;
@@ -64,7 +71,7 @@ body {
 }
 
 /* Círculo Azul Topo Direito */
-.blue-top-right-expectativas {
+.forma-azul-topo-direito {
   width: 550px;
   height: 500px;
   background: #6697ED;
@@ -74,7 +81,7 @@ body {
 }
 
 /* Quadrado Verde Meio Direito */
-.green-middle-expectativas {
+.forma-verde-meio {
   width: 500px;
   height: 300px;
   background: #9AFFB4;
@@ -86,7 +93,7 @@ body {
 
 
 /* Círculo Vermelho Pequeno Meio Direito */
-.small-red-middle-expectativas {
+.forma-vermelha-pequena-meio {
   width: 100px;
   height: 100px;
   background: #ff6b81;
@@ -94,16 +101,26 @@ body {
   right: 350px;
 }
 
+/* Forma amarela grande inferior (decoração) */
+.forma-amarela-grande-inferior {
+  width: 600px;
+  height: 300px;
+  background: #FFF69D;
+  bottom: -100px;
+  left: 40px;
+  border-radius: 40%;
+  opacity: 0.95;
+}
+
 /* =========================================
    HEADER (TÍTULO PRINCIPAL)
 ========================================= */
-.expectativas-header-expectativas {
+.cabecalho-expectativas {
   padding-top: 20px;
   /* Mais sutil que 100px */
   margin-bottom: 20px;
 }
-
-.hero-title-expectativas {
+.titulo-principal-expectativas {
   font-family: 'Anton', sans-serif;
     font-size: 200px; 
     line-height: 1;
@@ -122,7 +139,7 @@ body {
 /* =========================================
    SELETOR DE SÉRIE
 ========================================= */
-.selector-section-expectativas {
+.seletor-serie-expectativas {
   margin-top: 20px;
   margin-bottom: 20px;
   font-weight: 700;
@@ -130,7 +147,7 @@ body {
   color: #6697ED;
 }
 
-.selector-section-expectativas select {
+.seletor-serie-expectativas select {
   margin-top: 6px;
   padding: 10px 12px;
   color: #333;
@@ -144,7 +161,7 @@ body {
   font-family: 'nunito', sans-serif;
 }
 
-.selector-section-expectativas select:focus {
+.seletor-serie-expectativas select:focus {
     outline: 2px solid #aaa;
     background: #fff;
 }
@@ -153,7 +170,7 @@ body {
 /* =========================================
    CARD PRINCIPAL DE EXPECTATIVAS (LISTA)
 ========================================= */
-.expectativas-card-wrapper-expectativas {
+.area-cartoes-expectativas {
   margin-top: 30px;
   background: #f0f0f0;
   border-radius: 15px;
@@ -162,45 +179,42 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
-.card-title-expectativas {
+.titulo-cartao-expectativas {
   font-weight: 700;
     font-size: 1.5rem;
     margin-bottom: 15px;
 }
 
 /* --- Estado Vazio --- */
-.empty-area-expectativas {
+.area-vazia-expectativas {
   text-align: center;
   color: #555;
   padding: 50px 0;
 }
-
-.icon-placeholder-expectativas {
+.icone-placeholder-expectativas {
   font-size: 3rem;
   color: #aaa;
   margin-bottom: 10px;
 }
-
-.empty-text-bold-expectativas {
+.texto-vazio-negrito-expectativas {
   font-weight: 700;
     font-size: 1.1rem;
     margin-bottom: 5px;
 }
-
-.empty-text-small-expectativas {
+.texto-vazio-pequeno-expectativas {
   font-size: 0.9rem;
     color: #777;
 }
 
 
 /* --- Lista de Itens --- */
-.expectativas-list-expectativas {
+.lista-expectativas {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-.expectativa-item-expectativas {
+.item-expectativa {
   border-left: 6px solid #ff6b81;
   /* Destaque rosa na lateral */
   padding: 15px;
@@ -209,7 +223,7 @@ body {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
 }
 
-.expectativa-item-expectativas h4 {
+.item-expectativa h4 {
   margin-top: 0;
   font-size: 1rem;
   color: #4a1d00;
@@ -217,19 +231,19 @@ body {
   font-weight: 700;
 }
 
-.expectativa-item-expectativas .codigo-bncc-expectativas {
+.item-expectativa .codigo-bncc {
   color: #ff6b81;
   /* Cor rosa para o código */
   font-size: 1.1rem;
 }
 
-.expectativa-item-expectativas .pratica-area-expectativas {
+.item-expectativa .area-pratica {
   font-weight: 400;
   color: #555;
 }
 
-.expectativa-item-expectativas .habilidade-text-expectativas,
-.expectativa-item-expectativas .objetivo-text-expectativas {
+.item-expectativa .texto-habilidade,
+.item-expectativa .texto-objetivo {
   font-size: 0.9rem;
   line-height: 1.4;
   color: #555;
@@ -241,43 +255,211 @@ body {
    MEDIA QUERIES (RESPONSIVIDADE)
 ========================================= */
 @media (max-width: 768px) {
-  .content-wrapper {
-    padding: 20px;
+  /* Ajustes gerais para tablets e telas médias */
+  .container-pagina-expectativas {
+    padding: 24px;
+    padding-bottom: 0;
   }
 
-  .hero-title {
-    font-size: 3rem;
-    line-height: 1;
+  .conteudo-pagina-expectativas {
+    gap: 25px;
+  }
+
+  .titulo-principal-expectativas {
+    font-size: 4rem;
+    width: 70%;
+    line-height: 1.05;
+    text-align: left;
+    margin-bottom: 20px;
+    text-shadow: none;
+  }
+
+  .cabecalho-expectativas {
+    padding-top: 12px;
+    margin-bottom: 16px;
+  }
+
+  .seletor-serie-expectativas {
     text-align: center;
-    margin-bottom: 30px;
+    font-size: 1.3rem;
+    margin-bottom: 16px;
   }
 
-  .expectativas-header {
-    padding-top: 20px;
-    margin-bottom: 30px;
+  .seletor-serie-expectativas select {
+    width: 90%;
+    max-width: 280px;
+    font-size: 0.95rem;
+    padding: 10px 12px;
   }
 
-  .selector-section {
-    text-align: center;
+  .area-cartoes-expectativas {
+    padding: 24px;
+    min-height: auto;
   }
 
-  .selector-section select {
-    width: 100%;
-    max-width: 250px;
+  .titulo-cartao-expectativas {
+    font-size: 1.35rem;
+    margin-bottom: 16px;
   }
 
-  /* Reduzindo o tamanho das shapes para mobile */
-  .yellow-top,
-  .blue-top-right,
-  .green-middle,
-  .large-yellow-bottom {
-    display: none;
-    /* Simplificar para mobile */
+  .item-expectativa {
+    padding: 14px;
   }
 
-  .small-red-middle {
+  .item-expectativa h4 {
+    font-size: 0.95rem;
+  }
+
+  .item-expectativa .texto-habilidade,
+  .item-expectativa .texto-objetivo {
+    font-size: 0.85rem;
+  }
+
+  /* Reduzindo o tamanho das formas decorativas que atrapalham no meio */
+  .forma-amarela-topo {
+    display: block;
+    width: 300px;
+    height: 300px;
     top: 20px;
-    right: 20px;
-    opacity: 0.7;
+    left: -150px;
+    opacity: 0.9;
   }
+
+  .forma-azul-topo-direito,
+  .forma-verde-meio,
+  .forma-amarela-grande-inferior {
+    display: none;
+  }
+
+  .forma-vermelha-pequena-meio {
+    display: block;
+    width: 80px;
+    height: 80px;
+    top: auto;
+    bottom: 100px;
+    right: 16px;
+    opacity: 0.8;
+  }
+}
+
+/* ==============================
+   MEDIA QUERY PARA 480px OU MENOS
+   Ajustes finos para celular pequeno
+   ============================== */
+@media (max-width: 480px) {
+  .container-pagina-expectativas {
+    padding: 14px;
+    padding-bottom: 0;
+  }
+
+  .conteudo-pagina-expectativas {
+    gap: 20px;
+  }
+
+  .titulo-principal-expectativas {
+    font-size: 4rem;
+    line-height: 1.08;
+    width: 50%;
+    text-align: left;
+    margin-bottom: 14px;
+    text-shadow: none;
+  }
+
+  .cabecalho-expectativas {
+    padding-top: 6px;
+    margin-bottom: 10px;
+  }
+
+  .seletor-serie-expectativas {
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+  }
+
+  .seletor-serie-expectativas select {
+    width: 100%;
+    max-width: 100%;
+    font-size: 0.9rem;
+    padding: 10px 12px;
+  }
+
+  .area-cartoes-expectativas {
+    padding: 16px;
+    min-height: auto;
+    margin-top: 16px;
+  }
+
+  .titulo-cartao-expectativas {
+    font-size: 1.08rem;
+    margin-bottom: 12px;
+  }
+
+  .item-expectativa {
+    padding: 12px;
+    border-left: 5px solid #ff6b81;
+  }
+
+  .item-expectativa h4 {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+  }
+
+  .item-expectativa .codigo-bncc {
+    font-size: 0.95rem;
+  }
+
+  .item-expectativa .area-pratica {
+    font-size: 0.85rem;
+  }
+
+  .item-expectativa .texto-habilidade,
+  .item-expectativa .texto-objetivo {
+    font-size: 0.8rem;
+    margin-top: 6px;
+  }
+
+  .area-vazia-expectativas {
+    padding: 24px 12px;
+  }
+
+  .icone-placeholder-expectativas {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+  }
+
+  .texto-vazio-negrito-expectativas {
+    font-size: 1rem;
+    margin-bottom: 4px;
+  }
+
+  .texto-vazio-pequeno-expectativas {
+    font-size: 0.8rem;
+  }
+
+  /* Em telas pequenas, ocultar formas grandes que atrapalham */
+  .forma-azul-topo-direito,
+  .forma-verde-meio,
+  .forma-amarela-grande-inferior {
+    display: none;
+  }
+
+  /* Manter formas decorativas pequenas em mobile */
+  .forma-amarela-topo {
+    display: block;
+    width: 180px;
+    height: 180px;
+    top: 8px;
+    left: -80px;
+    opacity: 0.9;
+  }
+
+  .forma-vermelha-pequena-meio {
+    display: block;
+    width: 50px;
+    height: 50px;
+    top: auto;
+    bottom: 80px;
+    right: 12px;
+    opacity: 0.85;
+  }
+
 }
