@@ -76,7 +76,7 @@ export default function SobreNos() {
                     <br />
                     <br />
 
-                    <section className="about-text-column">
+                    <section className="about-text-column2">
                             <p className="sobre-nos-paragraph">
                                 Neste projeto desenvolvemos uma aplicação web completa (Full Stack). Utilizamos uma API de IA Generativa Gemini 
                                 para auxiliar a professora de português, Palloma Favarão, em seus planejamentos de aulas sugerindo apresentações 
