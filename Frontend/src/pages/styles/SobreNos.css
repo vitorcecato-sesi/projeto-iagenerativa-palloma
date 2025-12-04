@@ -4,6 +4,12 @@
 
 /* --- NOVAS FORMAS GEOMÉTRICAS PARA O SOBRE NÓS --- */
 
+/* base para shapes decorativos */
+.shape {
+    position: absolute;
+    pointer-events: none;
+}
+
 /* Círculo Azul Grande (Topo Esquerdo - Fundo do título) */
 .sobre-nos-retangulo-verde {
     width: 500px;
@@ -53,7 +59,6 @@
     border-radius: 50%;
     top: 775px;
     left: 15px;
-    z-index: 1;
 }
 
 
@@ -104,6 +109,7 @@
     line-height: 1.6;
     text-align: justify;
     font-family: 'nunito', sans-serif;
+    z-index: -1;
 }
 
 /* Garante o negrito no texto */
@@ -117,6 +123,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative; /* para permitir sobreposição absoluta/relativa da imagem */
 }
 
 .group-photo {
@@ -126,6 +133,10 @@
     border-radius: 15px;
     object-fit: cover;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 3; /* sobre o círculo decorativo */
+    /* ajuste fino para posicionar a foto por cima do círculo vermelho */
+    transform: translate(30px, -40px);
 }
 
 /* --- Seção de Integrantes --- */
@@ -172,4 +183,148 @@
     font-size: 1.5rem;
     font-weight: 1000;
     color: #ADECFF; /* Azul cornflower do seu design original */
+}
+
+@media (max-width: 2391px) {
+   .sobre-nos-paragraph {
+        font-size: 2.1em;
+    }
+
+    .group-photo {
+        width: 80%;
+        height: auto;
+}
+
+.integrantes-title{
+    font-size: 2.5rem;
+}
+
+.integrante-name{
+    font-size: 2rem;
+}
+}
+
+@media (max-width: 1755px){
+    .group-photo{
+        width: 93%;
+        margin-top: 2.2em;
+    }
+
+     .sobre-nos-title {
+        font-size: 8.5em;
+    }
+
+    .sobre-nos-paragraph{
+        font-size: 2em;
+    }
+
+    .integrantes-section{
+        padding: 0 20px;
+    }
+
+    .integrantes-title{
+        font-size: 2.2rem;
+    }
+
+    .integrantes-section {
+        position: relative; /* container for absolute positioning */
+        padding-top: 30px; /* give some room so content doesn't overlap unexpectedly */
+    }
+
+    .integrantes-title {
+        position: absolute;
+        left: 15px; /* align with the circle's left position */
+        top: 95px; /* pull the title up so it sits on top of the circle */
+        z-index: 5; /* above the circle (circle z-index is 1) */
+        background: transparent;
+        margin: 0;
+        padding: 0 6px; /* small horizontal padding so text doesn't touch circle edges */
+        transform: translateY(0);
+    }
+
+    .integrantes-grid{
+        margin-top: 10em;
+    }
+
+}
+
+
+@media (max-width: 1270px) {
+    .sobre-nos-title {
+        font-size: 8.5em;
+    }
+
+    .sobre-nos-paragraph{
+        font-size: 20px;
+    }
+
+    .group-photo{
+        width: 90%;
+        margin-top: 4em;
+    }
+
+    .integrantes-section{
+        padding: 0 20px;
+    }
+
+    .integrantes-title{
+        font-size: 2.2rem;
+    }
+
+    .integrantes-section {
+        position: relative; /* container for absolute positioning */
+        padding-top: 30px; /* give some room so content doesn't overlap unexpectedly */
+    }
+
+    .integrantes-title {
+        position: absolute;
+        left: 15px; /* align with the circle's left position */
+        top: 95px; /* pull the title up so it sits on top of the circle */
+        z-index: 5; /* above the circle (circle z-index is 1) */
+        background: transparent;
+        margin: 0;
+        padding: 0 6px; /* small horizontal padding so text doesn't touch circle edges */
+        transform: translateY(0);
+    }
+
+    .integrantes-grid{
+        margin-top: 10em;
+    }
+
+
+}
+
+@media (max-width: 1205px) {
+    .about-us-hero-section {
+        gap: 30px;
+        margin-top: -0.3em;
+    }
+
+    .about-image-column,
+    .about-text-column {
+        max-width: 100%;
+    }
+
+    .group-photo {
+        transform: translate(0, 0); /* centraliza a imagem em telas menores */
+        width: 95%;
+        margin-top: -1em;
+    }
+}
+
+@media (max-width: 1110px) {
+    .about-us-hero-section{
+        margin-top: 3em;
+    }
+
+    .about-text-column {
+        padding: 20px;
+        margin-bottom: 2em;
+    }
+
+    /* reposicionar a bolinha vermelha para baixo do bloco azul */
+    .sobre-nos-circle-red-small-top {
+        top: 500px; /* move para baixo */
+        right: 40px; /* ajusta posição horizontal */
+    }
 }
