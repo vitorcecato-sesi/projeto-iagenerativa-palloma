@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
-// 1. Importar useNavigate para manipular o redirecionamento
+import { useState, useEffect } from "react";
+
+// Importar useNavigate para manipular o redirecionamento
 import { useNavigate } from "react-router-dom";
 
 import "./styles/Login.css";
@@ -19,7 +20,7 @@ const Login = () => {
     // Variável de controle: se o login foi validado e precisa redirecionar
     const [shouldRedirect, setShouldRedirect] = useState(false);
 
-    // 2. Hook useEffect para lidar com o redirecionamento após a validação
+    // Hook useEffect para lidar com o redirecionamento após a validação
     useEffect(() => {
         if (shouldRedirect) {
             // Define o tempo de espera (ex: 2000 milissegundos = 2 segundos)
@@ -56,11 +57,11 @@ const Login = () => {
 
         // --- Validação de dados (Lógica de Login) ---
         if (user === "palloma" && senha === "1234") {
-            // 3. Define o status de sucesso
+            // Define o status de sucesso
             setValidacao(true);
             setStatus("Login bem-sucedido! Redirecionando...");
            
-            // 4. Ativa o redirecionamento (o useEffect fará o trabalho)
+            // Ativa o redirecionamento (o useEffect fará o trabalho)
             setShouldRedirect(true);
 
         } else {
