@@ -31,6 +31,7 @@ const IntegranteCard = ({ nome, fotoUrl }) => (
 export default function SobreNos() {
     return (
         <section className="page-container sobre-nos-page">
+            <Navbar />
 
             <section className="shape sobre-nos-retangulo-verde"></section>
             <section className="shape sobre-nos-circle-red-small-top"></section>
@@ -41,7 +42,7 @@ export default function SobreNos() {
 
 
             <section className="content-wrapper">
-                <Navbar />
+                
 
                 <section className="sobre-nos-content">
                     {/* --- Seção de Título e Texto --- */}
