@@ -16,16 +16,17 @@ body {
     font-family: 'Nunito', sans-serif;
     background-color: #fcfcf8;
     color: #333;
+    /* Garante que não haja rolagem horizontal indesejada por causa das formas */
+    overflow-x: hidden;
 }
 
 /* =========================================
    CONTAINER PRINCIPAL
 ========================================= */
-.page-container {
+.containerTotalPagina {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    /* MUDANÇA CRÍTICA AQUI: Permitir scroll vertical, esconder horizontal */
     overflow-x: hidden; 
     padding: 40px;
 }
@@ -36,6 +37,7 @@ body {
 .shape {
     position: absolute;
     z-index: 0;
+    pointer-events: none; /* Impede que as formas bloqueiem cliques no mobile */
 }
 
 /* Círculo Azul Superior Esquerdo (Fundo do título) */
@@ -98,7 +100,7 @@ body {
     left: 49.1%;
 }
 
-/* Retângulo Azul (decoração extra bottom-left, opcional da sua imagem) */
+/* Retângulo Azul (decoração extra bottom-left) */
 .rect-blue-bottom-left {
     width: 200px;
     height: 150px;
@@ -116,6 +118,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 50px;
+    z-index: 1; /* Garante que o conteúdo fique sobre as formas */
 }
 
 /* =========================================
@@ -145,11 +148,10 @@ body {
     
     /* === EFEITO DE ENGROSSAMENTO === */
     text-shadow: 
-        5px 1px 0px #3e1e04, /* Deslocamento 1 */
-        -1px -1px 0px #3e1e04, /* Deslocamento 2 */
-        5px -1px 0px #3e1e04, /* Deslocamento 3 */
-        -1px 1px 0px #3e1e04; /* Deslocamento 4 */
-    /* Isso cria um contorno completo, fazendo a letra parecer mais robusta. */
+        5px 1px 0px #3e1e04, 
+        -1px -1px 0px #3e1e04, 
+        5px -1px 0px #3e1e04, 
+        -1px 1px 0px #3e1e04; 
 }
 
 .expectations-btn-wrapper {
@@ -229,8 +231,8 @@ body {
     width: 100%;
     padding: 10px 15px;
     border-radius: 8px;
-    border: none; /* Estilo flat */
-    background-color: #e0e0e0; /* Input mais escuro que o card */
+    border: none; 
+    background-color: #e0e0e0; 
     font-family: 'Nunito', sans-serif;
     font-size: 0.9rem;
     color: #555;
@@ -243,7 +245,7 @@ body {
     background: #fff;
 }
 
-/* Tamanho do TextArea (Área de texto) para a Observação do formulário */
+/* Tamanho do TextArea */
 .input-group textarea {
     height: 150px;
     resize: none;
@@ -301,7 +303,7 @@ body {
     color: white;
     border: none;
     padding: 12px;
-    border-radius: 25px; /* Bem arredondado */
+    border-radius: 25px; 
     font-weight: 700;
     font-size: 1.1rem;
     cursor: pointer;
@@ -343,8 +345,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 /* Placeholder */
@@ -422,15 +423,15 @@ body {
     line-height: 1.6;
 }
 
-/* Títulos gerados (Ex: "EXPECTATIVAS:") */
+/* Títulos gerados */
 .ia-subtitle {
     font-size: 1.25rem;
     font-weight: 800;
-    color: #2c3e50; /* Azul escuro quase preto */
+    color: #2c3e50; 
     margin-top: 25px;
     margin-bottom: 12px;
     padding-bottom: 5px;
-    border-bottom: 2px solid #74c686; /* Linha verde sutil embaixo do título */
+    border-bottom: 2px solid #74c686; 
     display: inline-block;
 }
 
@@ -445,43 +446,116 @@ body {
 /* Listas */
 .ia-list {
     margin-bottom: 20px;
-    padding-left: 25px; /* Recuo para os bullets */
+    padding-left: 25px; 
 }
 
 .ia-list li {
     margin-bottom: 8px;
-    list-style-type: disc; /* Bolinha clássica */
+    list-style-type: disc; 
     color: #555;
 }
 
-/* Garante que o negrito (strong) fique destacado */
 strong {
     font-weight: 700;
     color: #000;
 }
 
-/* =========================================
-   MEDIA QUERIES (RESPONSIVIDADE)
-========================================= */
-@media (max-width: 900px) {
+/* ==========================================================================
+   RESPONSIVIDADE (MEDIA QUERIES)
+   Adicionado para suportar 768px e 450px
+========================================================================== */
+
+/* --- TABLETS E TELAS MÉDIAS (até 768px) --- */
+@media (max-width: 950px) {
+    .containerTotalPagina {
+        padding: 20px; /* Reduz padding lateral */
+    }
+
+    /* Muda o layout de lado-a-lado para coluna única */
     .top-section {
         flex-direction: column;
         align-items: center;
+        margin-top: 0; /* Remove margem negativa que puxava pra cima */
+        gap: 20px;
+    }
+
+    /* Ajusta o título gigante para caber na tela */
+    .hero-column {
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
     }
 
     .hero-title {
-        font-size: 4rem;
-        text-align: center;
+        font-size: 8em; /* Reduz drasticamente de 200px para 80px */
+        margin-bottom: 20px;
     }
 
-    .hero-column {
-        width: 100%;
+    /* Centraliza o botão de expectativas e remove padding excessivo */
+    .expectations-btn-wrapper {
+        padding-left: 0;
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        justify-content: center;
     }
-    
+
+    .expectations-btn {
+        max-width: 100%; /* Permite ocupar largura total se precisar */
+    }
+
+    /* Ajusta container do formulário */
+    .form-section {
+        padding-left: 0;
+        padding-top: 0;
+        width: 100%;
+    }
+
     .form-card {
         width: 100%;
+        max-width: 100%;
+    }
+
+    /* Ajuste das formas para não atrapalhar a leitura */
+    .circle-blue-top-left {
+        width: 300px;
+        height: 300px;
+        top: -50px;
+        left: -50px;
+    }
+
+    .rect-green-top {
+        display: none; /* Esconde formas que quebram o layout mobile */
+    }
+}
+
+/* --- CELULARES (até 450px) --- */
+@media (max-width: 768px) {
+    .containerTotalPagina {
+        padding: 15px; /* Padding mínimo */
+    }
+
+    /* Título ainda menor para telas pequenas */
+    .hero-title {
+        display: none; /* Esconde o título para economizar espaço */
+    }
+
+    /* Inputs que estavam em linha (Série e Duração) agora empilham */
+    .row-inputs {
+        flex-direction: column;
+        gap: 0; /* O margin-bottom do input-group já dá espaçamento */
+    }
+
+    .result-paper {
+        padding: 20px; /* Mais espaço interno no papel do resultado */
+    }
+
+    /* Esconde mais formas decorativas para limpar a visão no mobile */
+    .circle-yellow-bottom-left,
+    .circle-green-bottom-right,
+    .rect-blue-bottom-left {
+        opacity: 0.3; /* Deixa bem transparente ou display: none se preferir */
+    }
+
+    .ia-subtitle {
+        font-size: 1.1rem;
     }
 }
