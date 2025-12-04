@@ -196,7 +196,7 @@
 
 /* Media queries organizadas em ordem decrescente de largura */
 
-@media (max-width: 420px) {
+@media (max-width: 420px)  {
     .sobre-nos-title {
         font-size: 120px;
         margin-left: -20px;
@@ -281,5 +281,12 @@
         gap: 30px 40px;
         padding: 0 30px;
     }
+}
+
+@media (max-width:1026px){
+.about-text-column{
+    width: 45em;
+}
+
 }
 
