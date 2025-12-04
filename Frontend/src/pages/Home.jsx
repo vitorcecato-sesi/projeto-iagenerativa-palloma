@@ -7,6 +7,7 @@ export default function Home() {
     <>
     <section className="siteTodo">
 
+      {/* Bloco para ir para a página de Login */}
       <section className="blocosNavbarHome"> 
         <Link className="blocoLoginNavbarHome" to="/login"> Login </Link>
       </section>
@@ -27,6 +28,7 @@ export default function Home() {
         </section>
       </section>
 
+      {/* Sequencia de blocos azuis */}
       <section className="blocosHome">
         <span className="home-shape blocoAzulHome"></span>
         <span className="home-shape blocoAzulHome"></span>
@@ -41,5 +43,5 @@ export default function Home() {
     
 </section>
     </>
-  );
+  )
 }
