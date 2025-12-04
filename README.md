@@ -65,7 +65,7 @@ O projeto utiliza uma arquitetura moderna para garantir performance e facilidade
 ![Google Gemini](https://img.shields.io/badge/Google%20Gemini%20API-8E75B2?style=for-the-badge&logo=googlebard&logoColor=white)
 
 ### Gestão
-![Trello](https://img.shields.io/badge/Kanban-0079BF?style=for-the-badge&logo=trello&logoColor=white)
+![Scrum](https://img.shields.io/badge/Scrum-0079BF?style=for-the-badge&logo=scrum&logoColor=white)
 
 ---
 
