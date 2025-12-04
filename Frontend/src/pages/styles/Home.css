@@ -175,3 +175,9 @@
         height: 40px;
     }
 }
+ 
+@media screen and (max-width: 415px) {
+    .tituloHome{
+        font-size: 70px;
+    }
+}
