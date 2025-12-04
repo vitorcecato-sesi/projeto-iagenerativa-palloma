@@ -196,55 +196,47 @@
 
 /* Media queries organizadas em ordem decrescente de largura */
 
-@media (max-width: 361px) {
-     .sobre-nos-title{
-        font-size: 7em;
-        margin-left: -0.3em;
-     }
+@media (max-width: 420px) {
+    .sobre-nos-title {
+        font-size: 120px;
+        margin-left: -20px;
+    }
 
-     .about-us-hero-section{
+    .about-us-hero-section {
         flex-direction: column;
-     }
+    }
 
-     .about-text-column{
-     width: 26em;
-     z-index: 3;
-     }
+    .about-text-column {
+        width: 28em;
+        margin-bottom: 30px;
+        z-index: 3;
+        margin-left: -1.5em;
+    }
 
-     .about-text-column2{
-        width: 26em;
-        margin-left: -3em;
-     }
+    .about-text-column2 {
+        width: 28em;
+        margin-left: -1.5em;
+        margin-bottom: 30px;
+    }
 
-     .sobre-nos-paragraph{
-        font-size: 1.5em;
-     }
+    .sobre-nos-paragraph {
+        font-size: 18px;
+    }
 
-     .group-photo{
-        width: 18em;
-     }
+    .group-photo {
+        width: 105%;
+        margin-left: -1.5em;
+    }
 
-     .integrantes-title{
-        font-size: 1.5em;
-        width: 40em;
-        margin-left: -2em;
-     }
+    .integrantes-title {
+        font-size: 1.5rem;
+        text-align: center;
+    }
 
-     .integrantes-grid{
+    .integrantes-grid {
         grid-template-columns: 1fr;
-        gap: 20px 0px;
+        gap: 30px 40px;
         padding: 0 20px;
-        margin-left: -3.3em;
-     }
-
-     .integrante-photo{
-        width: 2em;
-     }
-
-     .integrantes-section{
-        margin-left: 0.3em;
-     }
-
-
-       
+        margin-left: -0.8em;
+    }
 }
