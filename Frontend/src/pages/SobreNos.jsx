@@ -73,6 +73,21 @@ export default function SobreNos() {
                         </section>
                     </section>
 
+                    <br />
+                    <br />
+
+                    <section className="about-text-column">
+                            <p className="sobre-nos-paragraph">
+                                Neste projeto desenvolvemos uma aplicação web completa (Full Stack). Utilizamos uma API de IA Generativa 
+                                Gemini para auxiliar a professora de português, Palloma Favarão, em seus planejamentos de aulas sugerindo 
+                                apresentações e exercícios referentes ao tema da aula escolhida. Para fazer a integração da IA Generativa 
+                                configuramos a API Gemini no Back-End (Node.JS) onde criamos um "Especialista" a partir do sistema Prompt 
+                                Engineering. No Front-End utilizamos React com Html/Css/JavaScript. Durante todo o processo utilizamos o 
+                                Trello, uma ferramenta de gestão visual de projetos, para organizarmos nossas entregas e dividir as 
+                                atividades para cada integrante.
+                            </p>
+                        </section>
+
                     {/* --- Seção de Integrantes --- */}
                     <section className="integrantes-section">
                         <h2 className="integrantes-title">Integrantes do grupo:</h2>
