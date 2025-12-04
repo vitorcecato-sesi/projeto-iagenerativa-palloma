@@ -51,7 +51,7 @@ export default function Expectativas() {
       setApiError(null);
       setExpectativasDaSerie([]);
 
-      const API_KEY = "AIzaSyCU8AHdMCQH0v6qV7CO0bMAL_M2WowH4wY";
+      const API_KEY = import.meta.env.VITE_GEMINI_KEY;
       const MODEL = "gemini-2.5-flash";
 
       const prompt = `Você é um assistente que extrai, a partir do documento da BNCC (link abaixo), as EXPECTATIVAS/objetivos de aprendizagem correspondentes à série informada. Retorne SOMENTE um JSON válido — um array de objetos — onde cada objeto possui as chaves: "codigo", "praticas", "habilidades", "objetivos" (objetivos pode ser um array de strings ou uma string). NÃO inclua texto adicional fora do JSON. Use o link como fonte:
