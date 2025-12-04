@@ -21,11 +21,11 @@
 
 ## 📖 Sobre o Projeto
 
-[cite_start]O **Teacher Up & Assistent** é uma aplicação web Full Stack desenvolvida pelo **Grupo 3** do curso de Desenvolvimento de Sistemas do SENAI[cite: 5, 88].
+O **Teacher Up & Assistent** é uma aplicação web Full Stack desenvolvida pelo **Grupo 3** do curso de Desenvolvimento de Sistemas do SENAI[cite: 5, 88].
 
-[cite_start]O objetivo principal deste projeto é auxiliar a professora **Palloma Favarão** (Língua Portuguesa) na criação ágil e criativa de planos de aula[cite: 1, 13]. [cite_start]A solução utiliza a API do **Google Gemini** para sugerir metodologias, recursos didáticos e avaliações personalizadas, focando especialmente em atrair a atenção de turmas do 6º ano e Ensino Médio[cite: 13, 88].
+O objetivo principal deste projeto é auxiliar a professora **Palloma Favarão** (Língua Portuguesa) na criação ágil e criativa de planos de aula[cite: 1, 13]. [cite_start]A solução utiliza a API do **Google Gemini** para sugerir metodologias, recursos didáticos e avaliações personalizadas, focando especialmente em atrair a atenção de turmas do 6º ano e Ensino Médio[cite: 13, 88].
 
-> [cite_start]"Nós somos uma página para ajudar você em seus planejamentos de aulas." [cite: 38]
+> "Nós somos uma página para ajudar você em seus planejamentos de aulas." [cite: 38]
 
 ---
 
@@ -34,26 +34,26 @@
 A aplicação foi projetada com foco na usabilidade e na integração inteligente:
 
 * **🤖 Integração com IA Generativa (Gemini):**
-    * [cite_start]Criação automática de planos de aula baseados em: Tema, Série/Ano e Observações[cite: 22, 66].
-    * [cite_start]Geração de tabelas detalhadas com metodologia, recursos e avaliação[cite: 24].
-    * [cite_start]Engenharia de Prompt configurada no Back-End para atuar como um "Especialista" pedagógico.
+    * Criação automática de planos de aula baseados em: Tema, Série/Ano e Observações[cite: 22, 66].
+    * Geração de tabelas detalhadas com metodologia, recursos e avaliação[cite: 24].
+    * Engenharia de Prompt configurada no Back-End para atuar como um "Especialista" pedagógico.
 
 * **📚 Consulta à BNCC:**
-    * [cite_start]Página dedicada para consultar as expectativas de aprendizado (BNCC) por série[cite: 16, 25].
-    * [cite_start]Visualização clara dos códigos e descrições das competências[cite: 21].
+    * Página dedicada para consultar as expectativas de aprendizado (BNCC) por série[cite: 16, 25].
+    * Visualização clara dos códigos e descrições das competências[cite: 21].
 
 * **📄 Exportação de Documentos:**
-    * [cite_start]Funcionalidade para gerar e baixar o planejamento completo em formato **PDF**[cite: 24, 29].
-    * [cite_start]Botão de cópia rápida para facilitar a transferência de texto[cite: 23].
+    * Funcionalidade para gerar e baixar o planejamento completo em formato **PDF**[cite: 24, 29].
+    * Botão de cópia rápida para facilitar a transferência de texto[cite: 23].
 
 * **📱 Design Responsivo:**
-    * [cite_start]Interface adaptada, focada na usabilidade em dispositivos móveis (ex: Galaxy M13) e desktops[cite: 20].
+    * Interface adaptada, focada na usabilidade em dispositivos móveis (ex: Galaxy M13) e desktops[cite: 20].
 
 ---
 
 ## 🛠 Tecnologias Utilizadas
 
-[cite_start]O projeto utiliza uma arquitetura moderna para garantir performance e facilidade de manutenção:
+O projeto utiliza uma arquitetura moderna para garantir performance e facilidade de manutenção:
 
 ### Front-End
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
@@ -75,26 +75,26 @@ O design foi pensado com uma paleta de cores acolhedora e estética moderna.
 
 | Tela de Login | Geração de Plano |
 |:---:|:---:|
-| [cite_start]*Acesso seguro via usuário e senha* [cite: 19, 44] | [cite_start]*Integração com API Gemini para sugestões* [cite: 66, 88] |
+| *Acesso seguro via usuário e senha* | *Integração com API Gemini para sugestões* |
 
 | Expectativas (BNCC) | Sobre Nós |
 |:---:|:---:|
-| [cite_start]*Filtro dinâmico por série/ano* [cite: 72, 82] | [cite_start]*Apresentação do time desenvolvedor* [cite: 87] |
+| *Filtro dinâmico por série/ano* | *Apresentação do time desenvolvedor* |
 
 ---
 
 ## 👥 Autores - Grupo 3
 
-[cite_start]Projeto desenvolvido com os princípios de honestidade, comprometimento e união[cite: 87].
+Projeto desenvolvido com os princípios de honestidade, comprometimento e união.
 
 | Nome | Função |
 |:---|:---|
-| **Laura Betti Migliaccio** | [cite_start]Equipe de Desenvolvimento  |
-| **Lucas Casagrande da Silva** | [cite_start]Equipe de Desenvolvimento  |
-| **Milena Oliveira Souza** | [cite_start]Equipe de Desenvolvimento  |
-| **Pietro Melle Michelin** | [cite_start]Equipe de Desenvolvimento  |
-| **Pyetro Joaquim Taborda Nunes** | [cite_start]Equipe de Desenvolvimento  |
-| **Vitor Geraldo Cecato** | [cite_start]Equipe de Desenvolvimento  |
+| **Laura Betti Migliaccio** | Equipe de Desenvolvimento  |
+| **Lucas Casagrande da Silva** | Equipe de Desenvolvimento  |
+| **Milena Oliveira Souza** | Equipe de Desenvolvimento  |
+| **Pietro Melle Michelin** | Equipe de Desenvolvimento  |
+| **Pyetro Joaquim Taborda Nunes** | Equipe de Desenvolvimento  |
+| **Vitor Geraldo Cecato** | Equipe de Desenvolvimento  |
 
 ---
 
