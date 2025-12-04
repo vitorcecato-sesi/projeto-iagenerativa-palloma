@@ -540,6 +540,11 @@ strong {
     .hero-title {
         font-size: 8em; /* Reduz drasticamente de 200px para 80px */
         margin-bottom: 20px;
+        text-shadow: 
+        3px 1px 0px #3e1e04, 
+        -1px -1px 0px #3e1e04, 
+        3px -1px 0px #3e1e04, 
+        -1px 1px 0px #3e1e04; 
     }
 
     /* Centraliza o botão de expectativas e remove padding excessivo */
@@ -592,7 +597,12 @@ strong {
 
     /* Título ainda menor para telas pequenas */
     .hero-title {
-        display: none; /* Esconde o título para economizar espaço */
+        text-shadow: 
+        1px 0px 0px #3e1e04, 
+        -0px -0px 0px #3e1e04, 
+        1px -0px 0px #3e1e04, 
+        -0px -0px 0px #3e1e04; 
+
     }
 
     /* Inputs que estavam em linha (Série e Duração) agora empilham */
