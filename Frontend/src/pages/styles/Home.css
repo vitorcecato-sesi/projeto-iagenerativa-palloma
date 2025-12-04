@@ -61,7 +61,6 @@
     padding-top: 4em;
 }
 
-/* substitua por */
 .home-shape {
     position: inherit;
 }
@@ -71,6 +70,7 @@
     height: 5vw;
     background-color: #6697ED;
 }
+
 
 
 @media screen and (max-width: 1330px) {
