@@ -79,6 +79,99 @@
     }
 
     .blocoAzulHome{
-        width: 300px;
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media screen and (max-width: 1094px) {
+    .tituloHome{
+        font-size: 150px;
+        margin-top: 22px;
+    }
+
+    .blocosHome{
+        gap: 4em;
+    }
+
+    .blocoAzulHome{
+        width: 200px;
+        height: 60px;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .tituloHome{
+        font-size: 145px;
+    }
+    
+    .blocoTexto{
+        margin-left: -11em;
+    }
+}
+
+@media screen and (max-width: 855px) {
+    .tituloHome{
+        font-size: 125px;
+    }
+
+    .blocoTexto{
+        margin-top: -4em;
+    }
+
+    .blocosHome{
+        gap: 2.5em;
+    }
+
+    .blocoAzulHome{
+        width: 100px;
+        height: 55px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .tituloHome{
+        font-size: 110px;
+    }
+
+    .blocoTexto{
+        margin-top: -6em;
+    }
+
+    .blocosHome{
+        gap: 2.5em;
+    }
+}
+
+@media screen and (max-width: 690px) {
+    .blocoPrincipalHome{
+        flex-direction: column;
+    }
+
+    .tituloHome{
+        font-size: 100px;
+    }
+
+    .blocoTexto{
+        padding-top: 8em;
+    }
+
+    .blocosHome{
+        gap: 2.2em;
+    }
+
+    .blocoAzulHome{
+        height: 50px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .blocosHome{
+        gap: 1.5em;
+        padding-left: 1em;
+    }
+
+    .blocoAzulHome{
+        height: 40px;
     }
 }
