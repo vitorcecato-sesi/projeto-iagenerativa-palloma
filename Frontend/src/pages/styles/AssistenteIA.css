@@ -1,10 +1,10 @@
 /* =========================================
-   FONTES
+    FONTES
 ========================================= */
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Nunito:wght@400;600;700&display=swap');
 
 /* =========================================
-   RESET & BASE
+    RESET & BASE
 ========================================= */
 * {
     box-sizing: border-box;
@@ -21,7 +21,7 @@ body {
 }
 
 /* =========================================
-   CONTAINER PRINCIPAL
+    CONTAINER PRINCIPAL
 ========================================= */
 .containerTotalPagina {
     position: relative;
@@ -32,7 +32,7 @@ body {
 }
 
 /* =========================================
-   FORMAS GEOMÉTRICAS (SHAPES)
+    FORMAS GEOMÉTRICAS (SHAPES)
 ========================================= */
 .shape {
     position: absolute;
@@ -111,7 +111,7 @@ body {
 }
 
 /* =========================================
-   WRAPPER DE CONTEÚDO (Z-INDEX ALTO)
+    WRAPPER DE CONTEÚDO (Z-INDEX ALTO)
 ========================================= */
 .content-wrapper {
     position: relative;
@@ -122,7 +122,7 @@ body {
 }
 
 /* =========================================
-   SEÇÃO SUPERIOR (HERO + FORM)
+    SEÇÃO SUPERIOR (HERO + FORM)
 ========================================= */
 .top-section {
     display: flex;
@@ -325,7 +325,7 @@ body {
 }
 
 /* =========================================
-   SEÇÃO INFERIOR (RESULTADO)
+    SEÇÃO INFERIOR (RESULTADO)
 ========================================= */
 .result-section {
     margin-top: 50px;
@@ -347,6 +347,58 @@ body {
     align-items: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
+
+/* NOVO: Wrapper para acomodar o conteúdo e os botões de ação */
+.ia-content-wrapper {
+    width: 100%;
+}
+
+/* NOVO: Estilos para os botões de ação */
+.action-buttons-container {
+    display: flex;
+    justify-content: flex-end; /* Alinha os botões à direita */
+    gap: 15px;
+    margin-bottom: 25px; /* Espaçamento entre os botões e o conteúdo do plano */
+}
+
+.action-btn {
+    padding: 10px 20px;
+    border: 2px solid;
+    border-radius: 25px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+}
+
+/* Botão de Copiar (azul) */
+.copy-btn {
+    background-color: #6495ed; /* Azul cornflower */
+    color: white;
+    border-color: #6495ed;
+}
+
+.copy-btn:hover {
+    background-color: #4679d9;
+    transform: translateY(-1px);
+}
+
+/* Botão de PDF (laranja/vermelho) */
+.pdf-btn {
+    background-color: transparent;
+    color: #ff8a80; /* Vermelho claro */
+    border-color: #ff8a80;
+}
+
+.pdf-btn:hover {
+    background-color: #ff8a80;
+    color: white;
+    transform: translateY(-1px);
+}
+
 
 /* Placeholder */
 .empty-state {
@@ -414,7 +466,7 @@ body {
 }
 
 /* =========================================
-   ESTILOS DO TEXTO DA IA
+    ESTILOS DO TEXTO DA IA
 ========================================= */
 
 .ia-content {
@@ -461,11 +513,10 @@ strong {
 }
 
 /* ==========================================================================
-   RESPONSIVIDADE (MEDIA QUERIES)
-   Adicionado para suportar 768px e 450px
+    RESPONSIVIDADE (MEDIA QUERIES)
 ========================================================================== */
 
-/* --- TABLETS E TELAS MÉDIAS (até 768px) --- */
+/* --- TABLETS E TELAS MÉDIAS (até 950px) --- */
 @media (max-width: 950px) {
     .containerTotalPagina {
         padding: 20px; /* Reduz padding lateral */
@@ -525,9 +576,15 @@ strong {
     .rect-green-top {
         display: none; /* Esconde formas que quebram o layout mobile */
     }
+
+    /* NOVO: Ajusta botões de ação para ficarem centralizados ou em coluna no mobile */
+    .action-buttons-container {
+        justify-content: center; /* Centraliza os botões */
+        flex-wrap: wrap; /* Quebra em linha se necessário */
+    }
 }
 
-/* --- CELULARES (até 450px) --- */
+/* --- CELULARES (até 768px) --- */
 @media (max-width: 768px) {
     .containerTotalPagina {
         padding: 15px; /* Padding mínimo */
@@ -557,5 +614,13 @@ strong {
 
     .ia-subtitle {
         font-size: 1.1rem;
+    }
+
+    /* NOVO: Faz os botões ficarem com largura total e empilhados */
+    .action-buttons-container {
+        flex-direction: column; 
+    }
+    .action-btn {
+        width: 100%; /* Ocupa a largura total */
     }
 }
