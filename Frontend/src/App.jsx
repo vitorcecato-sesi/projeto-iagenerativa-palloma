@@ -6,6 +6,7 @@ import Home from "./pages/Home.jsx"
 import Login from './pages/Login.jsx'
 import AssistenteIA from './pages/AssistenteIA.jsx'
 import Expectativas from './pages/Expectativas.jsx'
+import SobreNos from './pages/SobreNos.jsx'
 
 function App() {
 
