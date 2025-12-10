@@ -180,4 +180,7 @@
     .tituloHome{
         font-size: 70px;
     }
+    a {
+        z-index: 10;
+    }
 }

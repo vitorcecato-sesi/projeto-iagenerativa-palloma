@@ -624,3 +624,13 @@ strong {
         width: 100%; /* Ocupa a largura total */
     }
 }
+
+@media screen and (max-width: 400px) {
+    nav {
+        z-index: 15;
+    }
+
+    .top-section {
+        margin-top: 40px;
+    }
+}
